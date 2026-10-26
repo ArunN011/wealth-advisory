@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102C26">
+
+    <title>Financial Goals | Finorix Wealth Advisory</title>
+
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="financial.css">
+</head>
+
+<body>
+
+    <div class="financial-dashboard">
+
+        <aside class="financial-sidebar" id="financialSidebar">
+
+            <a href="user-dashboard.html" class="financial-brand">
+                <img src="Assets/blacklogo.webp" alt="Finorix Wealth Advisory">
+            </a>
+
+            <div class="financial-profile">
+                <div class="financial-avatar">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+
+                <div class="financial-profile-info">
+                    <strong id="financialSidebarName">User</strong>
+                    <span>Wealth Client</span>
+                </div>
+            </div>
+
+            <span class="financial-nav-title">MY FINANCES</span>
+
+            <nav class="financial-navigation">
+
+                <a href="user-dashboard.html" class="financial-nav-link">
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="my-investments.html" class="financial-nav-link">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <span>My Investments</span>
+                </a>
+
+                <a href="financial.html" class="financial-nav-link active" aria-current="page">
+                    <i class="bi bi-bullseye"></i>
+                    <span>Financial Goals</span>
+                </a>
+
+            </nav>
+
+            <div class="financial-sidebar-support">
+
+                <div class="financial-support-icon">
+                    <i class="bi bi-people"></i>
+                </div>
+
+                <strong>Need assistance?</strong>
+
+                <p>
+                    Get guidance on planning your financial future and reaching your goals.
+                </p>
+
+                <a href="error.html">
+                    Contact Advisor
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+
+            </div>
+
+            <div class="financial-sidebar-bottom">
+
+                <button type="button" id="financialLogout">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+        <div class="financial-overlay" id="financialOverlay"></div>
+
+        <main class="financial-main">
+
+            <header class="financial-topbar">
+
+                <div class="financial-topbar-left">
+
+                    <button type="button"
+                        id="financialMenuButton"
+                        class="financial-menu-button"
+                        aria-label="Open navigation menu"
+                        aria-controls="financialSidebar"
+                        aria-expanded="false">
+
+                        <i class="bi bi-list"></i>
+
+                    </button>
+
+                    <a href="user-dashboard.html" class="financial-mobile-logo">
+                        <img src="Assets/blacklogo.webp" alt="Finorix">
+                    </a>
+
+                    <div class="financial-page-heading">
+                        <span>PLAN YOUR TOMORROW</span>
+                        <h1>FINANCIAL GOALS</h1>
+                    </div>
+
+                </div>
+
+                <div class="financial-topbar-actions">
+
+                    <a href="error.html" class="financial-topbar-icon" aria-label="Search">
+                        <i class="bi bi-search"></i>
+                    </a>
+
+                    <a href="error.html"
+                        class="financial-topbar-icon financial-notification"
+                        aria-label="Notifications">
+                        <i class="bi bi-bell"></i>
+                        <span></span>
+                    </a>
+
+                    <div class="financial-topbar-user">
+
+                        <div class="financial-topbar-avatar">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+
+                        <div>
+                            <strong id="financialHeaderName">User</strong>
+                            <span>Wealth Client</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <div class="financial-content">
+
+                <section class="financial-hero">
+
+                    <div class="financial-hero-content">
+
+                        <span class="financial-hero-date" id="financialCurrentDate"></span>
+
+                        <div class="financial-hero-label">
+                            <span></span>
+                            BUILD THE FUTURE YOU ENVISION
+                        </div>
+
+                        <h2>
+                            Dreams Into Plans.<br>
+                            <strong>Plans Into Reality.</strong>
+                        </h2>
+
+                        <p>
+                            Give your ambitions a clear direction. Track your savings
+                            goals, monitor your progress, and take meaningful steps
+                            toward your financial future.
+                        </p>
+
+                        <div class="financial-hero-actions">
+
+                            <a href="error.html" class="financial-primary-button">
+                                EXPLORE YOUR GOALS
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                            <a href="error.html" class="financial-secondary-button">
+                                VIEW PLANNING TIPS
+                                <i class="bi bi-arrow-down"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="financial-hero-visual" aria-hidden="true">
+
+                        <div class="financial-hero-circle financial-circle-one"></div>
+                        <div class="financial-hero-circle financial-circle-two"></div>
+                        <div class="financial-hero-circle financial-circle-three"></div>
+
+                        <div class="financial-hero-center">
+                            <i class="bi bi-bullseye"></i>
+                            <strong>YOUR GOALS</strong>
+                            <span>YOUR FUTURE</span>
+                        </div>
+
+                        <div class="financial-floating-card financial-float-one">
+                            <i class="bi bi-house-heart"></i>
+                            <span>Dream Home</span>
+                        </div>
+
+                        <div class="financial-floating-card financial-float-two">
+                            <i class="bi bi-mortarboard"></i>
+                            <span>Education</span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="financial-overview">
+
+                    <article class="financial-overview-card">
+
+                        <div class="financial-overview-top">
+                            <div class="financial-overview-icon overview-green">
+                                <i class="bi bi-flag"></i>
+                            </div>
+                            <span class="financial-overview-label">PLANNING</span>
+                        </div>
+
+                        <span class="financial-overview-title">Active Financial Goals</span>
+
+                        <h3 id="financialActiveGoals">04</h3>
+
+                        <p>
+                            <i class="bi bi-info-circle"></i>
+                            Sample goals for demonstration
+                        </p>
+
+                    </article>
+
+                    <article class="financial-overview-card">
+
+                        <div class="financial-overview-top">
+                            <div class="financial-overview-icon overview-blue">
+                                <i class="bi bi-piggy-bank"></i>
+                            </div>
+                            <span class="financial-overview-label">SAVINGS</span>
+                        </div>
+
+                        <span class="financial-overview-title">Total Target Amount</span>
+
+                        <h3>₹25,00,000</h3>
+
+                        <p>
+                            Combined target across sample goals
+                        </p>
+
+                    </article>
+
+                    <article class="financial-overview-card">
+
+                        <div class="financial-overview-top">
+                            <div class="financial-overview-icon overview-orange">
+                                <i class="bi bi-wallet2"></i>
+                            </div>
+                            <span class="financial-overview-label">PROGRESS</span>
+                        </div>
+
+                        <span class="financial-overview-title">Amount Saved</span>
+
+                        <h3>₹10,50,000</h3>
+
+                        <p>
+                            <i class="bi bi-info-circle"></i>
+                            Illustrative savings balance
+                        </p>
+
+                    </article>
+
+                    <article class="financial-overview-card">
+
+                        <div class="financial-overview-top">
+                            <div class="financial-overview-icon overview-purple">
+                                <i class="bi bi-percent"></i>
+                            </div>
+                            <span class="financial-overview-label">MILESTONE</span>
+                        </div>
+
+                        <span class="financial-overview-title">Overall Goal Progress</span>
+
+                        <h3>42%</h3>
+
+                        <div class="financial-mini-progress">
+                            <span style="width: 42%"></span>
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <section class="financial-goals-section" id="financialGoals">
+
+                    <div class="financial-section-heading">
+
+                        <div>
+                            <span>YOUR FINANCIAL JOURNEY</span>
+                            <h2>Goals That Matter</h2>
+                            <p>
+                                Keep track of what you are working toward and how far you have come.
+                            </p>
+                        </div>
+
+                        <a href="error.html" class="financial-add-goal">
+                            <i class="bi bi-plus-lg"></i>
+                            CREATE NEW GOAL
+                        </a>
+
+                    </div>
+
+                    <div class="financial-goals-grid">
+
+                        <article class="financial-goal-card">
+
+                            <div class="financial-goal-top">
+                                <div class="financial-goal-icon goal-home">
+                                    <i class="bi bi-house-heart"></i>
+                                </div>
+
+                                <span class="financial-goal-badge">LONG TERM</span>
+                            </div>
+
+                            <h3>Dream Home</h3>
+
+                            <p class="financial-goal-description">
+                                Build a fund for your future home.
+                            </p>
+
+                            <div class="financial-goal-amounts">
+                                <div>
+                                    <span>Saved so far</span>
+                                    <strong>₹5,00,000</strong>
+                                </div>
+
+                                <div class="financial-goal-target">
+                                    <span>Target amount</span>
+                                    <strong>₹10,00,000</strong>
+                                </div>
+                            </div>
+
+                            <div class="financial-goal-progress-heading">
+                                <span>Goal progress</span>
+                                <strong>50%</strong>
+                            </div>
+
+                            <div class="financial-progress-track">
+                                <span style="width: 50%"></span>
+                            </div>
+
+                            <div class="financial-goal-footer">
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Target: 2030
+                                </span>
+
+                                <a href="error.html" aria-label="View Dream Home goal">
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </a>
+                            </div>
+
+                        </article>
+
+                        <article class="financial-goal-card">
+
+                            <div class="financial-goal-top">
+                                <div class="financial-goal-icon goal-education">
+                                    <i class="bi bi-mortarboard"></i>
+                                </div>
+
+                                <span class="financial-goal-badge">MID TERM</span>
+                            </div>
+
+                            <h3>Education Fund</h3>
+
+                            <p class="financial-goal-description">
+                                Prepare for future education expenses.
+                            </p>
+
+                            <div class="financial-goal-amounts">
+                                <div>
+                                    <span>Saved so far</span>
+                                    <strong>₹2,50,000</strong>
+                                </div>
+
+                                <div class="financial-goal-target">
+                                    <span>Target amount</span>
+                                    <strong>₹5,00,000</strong>
+                                </div>
+                            </div>
+
+                            <div class="financial-goal-progress-heading">
+                                <span>Goal progress</span>
+                                <strong>50%</strong>
+                            </div>
+
+                            <div class="financial-progress-track">
+                                <span style="width: 50%"></span>
+                            </div>
+
+                            <div class="financial-goal-footer">
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Target: 2028
+                                </span>
+
+                                <a href="error.html" aria-label="View Education Fund goal">
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </a>
+                            </div>
+
+                        </article>
+
+                        <article class="financial-goal-card">
+
+                            <div class="financial-goal-top">
+                                <div class="financial-goal-icon goal-retirement">
+                                    <i class="bi bi-tree"></i>
+                                </div>
+
+                                <span class="financial-goal-badge">LONG TERM</span>
+                            </div>
+
+                            <h3>Retirement Fund</h3>
+
+                            <p class="financial-goal-description">
+                                Work toward a comfortable retirement.
+                            </p>
+
+                            <div class="financial-goal-amounts">
+                                <div>
+                                    <span>Saved so far</span>
+                                    <strong>₹2,00,000</strong>
+                                </div>
+
+                                <div class="financial-goal-target">
+                                    <span>Target amount</span>
+                                    <strong>₹7,00,000</strong>
+                                </div>
+                            </div>
+
+                            <div class="financial-goal-progress-heading">
+                                <span>Goal progress</span>
+                                <strong>28.6%</strong>
+                            </div>
+
+                            <div class="financial-progress-track">
+                                <span style="width: 28.6%"></span>
+                            </div>
+
+                            <div class="financial-goal-footer">
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Target: 2040
+                                </span>
+
+                                <a href="error.html" aria-label="View Retirement Fund goal">
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </a>
+                            </div>
+
+                        </article>
+
+                        <article class="financial-goal-card">
+
+                            <div class="financial-goal-top">
+                                <div class="financial-goal-icon goal-emergency">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+
+                                <span class="financial-goal-badge">SHORT TERM</span>
+                            </div>
+
+                            <h3>Emergency Fund</h3>
+
+                            <p class="financial-goal-description">
+                                Prepare a financial cushion for unexpected expenses.
+                            </p>
+
+                            <div class="financial-goal-amounts">
+                                <div>
+                                    <span>Saved so far</span>
+                                    <strong>₹1,00,000</strong>
+                                </div>
+
+                                <div class="financial-goal-target">
+                                    <span>Target amount</span>
+                                    <strong>₹3,00,000</strong>
+                                </div>
+                            </div>
+
+                            <div class="financial-goal-progress-heading">
+                                <span>Goal progress</span>
+                                <strong>33.3%</strong>
+                            </div>
+
+                            <div class="financial-progress-track">
+                                <span style="width: 33.3%"></span>
+                            </div>
+
+                            <div class="financial-goal-footer">
+                                <span>
+                                    <i class="bi bi-calendar3"></i>
+                                    Target: 2027
+                                </span>
+
+                                <a href="error.html" aria-label="View Emergency Fund goal">
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </a>
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <section class="financial-analysis-grid">
+
+                    <article class="financial-panel financial-savings-panel">
+
+                        <div class="financial-panel-heading">
+                            <div>
+                                <span>SAVINGS OVERVIEW</span>
+                                <h3>Monthly Contributions</h3>
+                            </div>
+
+                            <i class="bi bi-bar-chart-line financial-panel-icon"></i>
+                        </div>
+
+                        <div class="financial-savings-summary">
+                            <div>
+                                <span>Illustrative monthly contribution</span>
+                                <strong>₹25,000</strong>
+                            </div>
+
+                            <span class="financial-sample-badge">
+                                Sample data
+                            </span>
+                        </div>
+
+                        <div class="financial-contribution-chart">
+                            <canvas id="financialContributionChart"
+                                role="img"
+                                aria-label="Illustrative monthly savings contributions chart"></canvas>
+                        </div>
+
+                    </article>
+
+                    <article class="financial-panel financial-breakdown-panel">
+
+                        <div class="financial-panel-heading">
+                            <div>
+                                <span>FUND ALLOCATION</span>
+                                <h3>Goal Distribution</h3>
+                            </div>
+
+                            <i class="bi bi-pie-chart financial-panel-icon"></i>
+                        </div>
+
+                        <div class="financial-distribution-chart">
+                            <canvas id="financialDistributionChart"
+                                role="img"
+                                aria-label="Illustrative financial goal distribution chart"></canvas>
+
+                            <div class="financial-distribution-center">
+                                <span>TOTAL SAVED</span>
+                                <strong>₹10.5L</strong>
+                            </div>
+                        </div>
+
+                        <div class="financial-distribution-list">
+
+                            <div>
+                                <span>
+                                    <i class="distribution-home"></i>
+                                    Dream Home
+                                </span>
+                                <strong>47.6%</strong>
+                            </div>
+
+                            <div>
+                                <span>
+                                    <i class="distribution-education"></i>
+                                    Education
+                                </span>
+                                <strong>23.8%</strong>
+                            </div>
+
+                            <div>
+                                <span>
+                                    <i class="distribution-retirement"></i>
+                                    Retirement
+                                </span>
+                                <strong>19.0%</strong>
+                            </div>
+
+                            <div>
+                                <span>
+                                    <i class="distribution-emergency"></i>
+                                    Emergency
+                                </span>
+                                <strong>9.6%</strong>
+                            </div>
+
+                        </div>
+
+                        <p class="financial-chart-disclaimer">
+                            Illustrative allocation based on the sample goals above.
+                        </p>
+
+                    </article>
+
+                </section>
+
+                <section class="financial-planning-section" id="financialPlanning">
+
+                    <div class="financial-section-heading">
+                        <div>
+                            <span>MAKE YOUR MONEY WORK WITH PURPOSE</span>
+                            <h2>Your Planning Checklist</h2>
+                            <p>
+                                Practical steps to help you stay organized and work toward your goals.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="financial-planning-grid">
+
+                        <article class="financial-planning-card">
+                            <div class="financial-planning-icon">
+                                <i class="bi bi-calendar2-check"></i>
+                            </div>
+
+                            <h3>Review Your Goals</h3>
+
+                            <p>
+                                Revisit your target amounts and timelines when your
+                                financial circumstances change.
+                            </p>
+
+                            <a href="error.html">
+                                Review plan
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </article>
+
+                        <article class="financial-planning-card">
+                            <div class="financial-planning-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+
+                            <h3>Prepare for Emergencies</h3>
+
+                            <p>
+                                Consider building accessible savings for unexpected
+                                expenses and short-term needs.
+                            </p>
+
+                            <a href="error.html">
+                                Explore planning
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </article>
+
+                        <article class="financial-planning-card">
+                            <div class="financial-planning-icon">
+                                <i class="bi bi-person-check"></i>
+                            </div>
+
+                            <h3>Talk to an Advisor</h3>
+
+                            <p>
+                                Discuss your time horizon, risk tolerance, and
+                                financial priorities with a qualified professional.
+                            </p>
+
+                            <a href="error.html">
+                                Contact advisor
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <section class="financial-reminder">
+
+                    <div class="financial-reminder-icon">
+                        <i class="bi bi-lightbulb"></i>
+                    </div>
+
+                    <div class="financial-reminder-content">
+                        <span>A NOTE FOR YOUR FINANCIAL JOURNEY</span>
+
+                        <h3>Progress matters more than perfection.</h3>
+
+                        <p>
+                            Set realistic targets, revisit them regularly, and
+                            consider your overall financial circumstances before
+                            making investment decisions.
+                        </p>
+                    </div>
+
+                    <a href="error.html" class="financial-reminder-button">
+                        GET GUIDANCE
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                </section>
+
+                <footer class="financial-footer">
+                    <span>
+                        © <span id="financialCurrentYear"></span>
+                        Finorix Wealth Advisory
+                    </span>
+
+                    <span>YOUR WEALTH. YOUR TOMORROW.</span>
+                </footer>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="financial.js"></script>
+
+</body>
+
+</html>

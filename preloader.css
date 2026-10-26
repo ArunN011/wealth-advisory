@@ -1,0 +1,165 @@
+
+.stackly-preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 20px;
+    overflow: hidden;
+    background: #ffffff;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.stackly-preloader.stackly-preloader-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.stackly-loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+}
+
+.stackly-loader-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    height: 125px;
+    margin-bottom: 20px;
+}
+
+.stackly-loader-image {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 82px;
+    height: 82px;
+    max-width: 100%;
+    object-fit: contain;
+    animation: stacklyLogoFloat 1.8s ease-in-out infinite;
+    filter: brightness(1) saturate(100%) invert(66%) sepia(12%) saturate(700%) hue-rotate(165deg) brightness(88%) contrast(88%);
+}
+
+.stackly-loader-ring {
+    position: absolute;
+    inset: 0;
+    border: 3px solid #e8efeb;
+    border-top-color: #328e80;
+    border-right-color: #102c26;
+    border-radius: 50%;
+    animation: stacklyRingRotate 1.2s linear infinite;
+}
+
+.stackly-loader-brand {
+    margin-bottom: 20px;
+    color: #102c26;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.stackly-loader-progress {
+    position: relative;
+    width: 180px;
+    height: 4px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e6eee9;
+}
+
+.stackly-loader-progress span {
+    display: block;
+    width: 40%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #102c26, #328e80);
+    animation: stacklyProgressMove 1.5s ease-in-out infinite;
+}
+
+.stackly-loader-text {
+    margin: 14px 0 0;
+    color: #7c8d83;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+@keyframes stacklyRingRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes stacklyLogoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes stacklyProgressMove {
+    0% {
+        transform: translateX(-110%);
+    }
+
+    100% {
+        transform: translateX(350%);
+    }
+}
+
+@media (max-width: 480px) {
+    .stackly-loader-logo {
+        width: 105px;
+        height: 105px;
+    }
+
+    .stackly-loader-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .stackly-loader-brand {
+        font-size: 17px;
+        letter-spacing: 3px;
+    }
+
+    .stackly-loader-progress {
+        width: 160px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stackly-loader-ring,
+    .stackly-loader-image,
+    .stackly-loader-progress span {
+        animation: none;
+    }
+
+    .stackly-loader-progress span {
+        width: 100%;
+        transform: none;
+    }
+}

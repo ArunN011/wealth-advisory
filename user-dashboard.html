@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102c26">
+    <title>Finorix | User Dashboard</title>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="user-dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-shell">
+
+    <aside class="dashboard-sidebar" id="dashboardSidebar" aria-label="Dashboard navigation">
+
+        <a href="user-dashboard.html" class="sidebar-brand">
+            <img src="Assets/blacklogo.webp" alt="Finorix Wealth Advisory">
+        </a>
+
+        <div class="sidebar-profile">
+            <div class="profile-avatar">
+                <i class="bi bi-person-fill"></i>
+            </div>
+
+            <div class="profile-info">
+                <strong id="sidebarUserName">User</strong>
+                <span>Wealth Client</span>
+            </div>
+        </div>
+
+        <div class="sidebar-title">MY FINANCES</div>
+
+        <nav class="sidebar-nav">
+            <a href="user-dashboard.html" class="sidebar-link active" aria-current="page">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="my-investments.html" class="sidebar-link">
+                <i class="bi bi-graph-up-arrow"></i>
+                <span>My Investments</span>
+            </a>
+
+            <a href="financial.html" class="sidebar-link">
+                <i class="bi bi-bullseye"></i>
+                <span>Financial Goals</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-support">
+            <div class="support-icon">
+                <i class="bi bi-people"></i>
+            </div>
+
+            <strong>Need assistance?</strong>
+            <p>Our advisory team is here to help.</p>
+
+            <a href="error.html">
+                Contact Advisor
+                <i class="bi bi-arrow-up-right"></i>
+            </a>
+        </div>
+
+        <div class="sidebar-bottom">
+            <button type="button" class="logout-link" id="logoutButton">
+                <i class="bi bi-box-arrow-left"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <div class="header-left">
+
+                <button
+                    type="button"
+                    class="mobile-menu"
+                    id="mobileMenuButton"
+                    aria-label="Open menu"
+                    aria-controls="dashboardSidebar"
+                    aria-expanded="false">
+
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <a href="user-dashboard.html" class="mobile-logo">
+                    <img src="Assets/blacklogo.webp" alt="Finorix Wealth Advisory">
+                </a>
+
+                <div class="header-heading">
+                    <span>YOUR WEALTH SPACE</span>
+                    <h1>MY DASHBOARD</h1>
+                </div>
+
+            </div>
+
+            <div class="header-right">
+
+                <a href="error.html" class="header-icon" aria-label="Search">
+                    <i class="bi bi-search"></i>
+                </a>
+
+                <a href="error.html" class="header-icon notification" aria-label="Notifications">
+                    <i class="bi bi-bell"></i>
+                    <span></span>
+                </a>
+
+                <a href="error.html" class="header-user">
+
+                    <div class="header-avatar">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+
+                    <div class="header-user-info">
+                        <strong id="headerUserName">User</strong>
+                        <span>Wealth Client</span>
+                    </div>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </a>
+
+            </div>
+
+        </header>
+
+        <div class="dashboard-content">
+
+            <section class="welcome-card">
+
+                <div class="welcome-content">
+
+                    <span class="welcome-date" id="currentDate"></span>
+
+                    <div class="welcome-status">
+                        <span></span>
+                        YOUR FUTURE, OUR PRIORITY
+                    </div>
+
+                    <h2>
+                        WELCOME BACK,
+                        <strong id="welcomeUser">USER</strong>
+                    </h2>
+
+                    <p>
+                        Take control of your financial future with clear insights,
+                        thoughtful planning, and a personalized view of your wealth journey.
+                    </p>
+
+                    <div class="welcome-actions">
+
+                        <a href="error.html" class="primary-btn">
+                            EXPLORE INVESTMENTS
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                        <a href="error.html" class="secondary-btn">
+                            VIEW FINANCIAL GOALS
+                            <i class="bi bi-bullseye"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="welcome-visual" aria-hidden="true">
+
+                    <div class="medical-orbit orbit-one"></div>
+                    <div class="medical-orbit orbit-two"></div>
+                    <div class="medical-orbit orbit-three"></div>
+
+                    <div class="orbit-dot dot-one"></div>
+                    <div class="orbit-dot dot-two"></div>
+                    <div class="orbit-dot dot-three"></div>
+                    <div class="orbit-dot dot-four"></div>
+
+                    <div class="medical-core">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <span>WEALTH</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="quick-grid">
+
+                <a href="error.html" class="quick-card">
+                    <div class="quick-card-top">
+                        <div class="quick-icon green">
+                            <i class="bi bi-pie-chart"></i>
+                        </div>
+                        <i class="bi bi-arrow-up-right quick-arrow"></i>
+                    </div>
+                    <strong>Portfolio Overview</strong>
+                    <p>Review your wealth allocation.</p>
+                </a>
+
+                <a href="error.html" class="quick-card">
+                    <div class="quick-card-top">
+                        <div class="quick-icon blue">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <i class="bi bi-arrow-up-right quick-arrow"></i>
+                    </div>
+                    <strong>My Investments</strong>
+                    <p>Explore your investment summary.</p>
+                </a>
+
+                <a href="error.html" class="quick-card">
+                    <div class="quick-card-top">
+                        <div class="quick-icon orange">
+                            <i class="bi bi-bullseye"></i>
+                        </div>
+                        <i class="bi bi-arrow-up-right quick-arrow"></i>
+                    </div>
+                    <strong>Financial Goals</strong>
+                    <p>Keep track of your milestones.</p>
+                </a>
+
+                <a href="error.html" class="quick-card">
+                    <div class="quick-card-top">
+                        <div class="quick-icon purple">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <i class="bi bi-arrow-up-right quick-arrow"></i>
+                    </div>
+                    <strong>Reports & Plans</strong>
+                    <p>Access your planning documents.</p>
+                </a>
+
+            </section>
+
+            <section class="dashboard-grid">
+
+                <article class="dashboard-card categories-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span>YOUR FINANCIAL PLAN</span>
+                            <h3>PLAN BY PRIORITY</h3>
+                        </div>
+
+                        <a href="error.html">
+                            VIEW ALL
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="category-grid">
+
+                        <a href="error.html" class="category-item">
+                            <div class="category-icon">
+                                <i class="bi bi-piggy-bank"></i>
+                            </div>
+                            <strong>Wealth Building</strong>
+                            <span>Build long-term value</span>
+                        </a>
+
+                        <a href="error.html" class="category-item">
+                            <div class="category-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <strong>Risk Planning</strong>
+                            <span>Protect what matters</span>
+                        </a>
+
+                        <a href="error.html" class="category-item">
+                            <div class="category-icon">
+                                <i class="bi bi-calendar2-check"></i>
+                            </div>
+                            <strong>Retirement</strong>
+                            <span>Prepare for tomorrow</span>
+                        </a>
+
+                        <a href="error.html" class="category-item">
+                            <div class="category-icon">
+                                <i class="bi bi-house-heart"></i>
+                            </div>
+                            <strong>Life Milestones</strong>
+                            <span>Plan for what matters</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article class="dashboard-card health-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span>YOUR FINANCIAL WELLBEING</span>
+                            <h3>PLANNING REMINDERS</h3>
+                        </div>
+
+                        <div class="card-header-icon">
+                            <i class="bi bi-bell"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="reminder-item">
+
+                        <div class="reminder-icon">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+
+                        <div class="reminder-text">
+                            <strong>Review your financial goals</strong>
+                            <p>
+                                Review your milestones regularly and adjust your plan
+                                as life changes.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="reminder-item">
+
+                        <div class="reminder-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+
+                        <div class="reminder-text">
+                            <strong>Think long term</strong>
+                            <p>
+                                Consider your time horizon, priorities, and comfort
+                                with investment risk.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <a href="error.html" class="health-link">
+                        REVIEW YOUR PLAN
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </article>
+
+            </section>
+
+            <section class="dashboard-grid lower-grid">
+
+                <article class="dashboard-card order-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span>PORTFOLIO ACTIVITY</span>
+                            <h3>RECENT ACTIVITY</h3>
+                        </div>
+
+                        <a href="error.html">
+                            VIEW ALL
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            <i class="bi bi-bar-chart-line"></i>
+                        </div>
+
+                        <h4>Your portfolio activity will appear here</h4>
+
+                        <p>
+                            Your investment updates and planning activity will appear
+                            here when available.
+                        </p>
+
+                        <a href="error.html" class="empty-state-btn">
+                            YOUR FINANCIAL PLAN
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <article class="dashboard-card service-card">
+
+                    <div class="service-card-top">
+
+                        <div class="service-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+
+                        <span>PERSONALIZED GUIDANCE</span>
+
+                    </div>
+
+                    <h3>Need clarity on your financial future?</h3>
+
+                    <p>
+                        Connect with our advisory team to discuss your goals,
+                        priorities, and planning questions.
+                    </p>
+
+                    <a href="error.html" class="service-btn">
+                        CONTACT YOUR ADVISOR
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                </article>
+
+            </section>
+
+            <section class="health-tip">
+
+                <div class="tip-icon">
+                    <i class="bi bi-lightbulb"></i>
+                </div>
+
+                <div class="tip-content">
+                    <span>WEALTH PLANNING NOTE</span>
+                    <strong>
+                        Review your financial goals periodically and keep your
+                        plan aligned with changing priorities.
+                    </strong>
+                </div>
+
+                <a href="error.html">
+                    REVIEW YOUR GOALS
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+            </section>
+
+            <footer class="dashboard-footer">
+                <span>
+                    &copy; <span id="currentYear"></span> Finorix Wealth Advisory
+                </span>
+                <span>YOUR WEALTH. YOUR TOMORROW.</span>
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script src="user-dashboard.js"></script>
+
+</body>
+</html>

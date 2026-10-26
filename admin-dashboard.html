@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102C26">
+
+    <title>Admin Dashboard | Wealth Advisory</title>
+
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+
+<body>
+
+    <div class="finorix-admin-dashboard">
+
+        <aside class="finorix-admin-sidebar" id="finorixAdminSidebar">
+
+            <a href="admin-dashboard.html" class="finorix-admin-brand">
+                <img src="Assets/blacklogo.webp" alt="Finorix Wealth Advisory">
+            </a>
+
+            <div class="finorix-admin-profile">
+
+                <div class="finorix-admin-avatar">
+                    <i class="bi bi-person-fill-gear"></i>
+                </div>
+
+                <div class="finorix-admin-profile-info">
+                    <strong id="finorixAdminSidebarName">Administrator</strong>
+                    <span>Wealth Administrator</span>
+                </div>
+
+                <span class="finorix-admin-online"></span>
+
+            </div>
+
+            <span class="finorix-admin-nav-title">ADMINISTRATION</span>
+
+            <nav class="finorix-admin-navigation">
+
+                <a href="admin-dashboard.html"
+                    class="finorix-admin-nav-link active"
+                    aria-current="page">
+
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    <span>Dashboard</span>
+
+                </a>
+
+                <a href="client.html" class="finorix-admin-nav-link">
+
+                    <i class="bi bi-people"></i>
+                    <span>Client Management</span>
+
+                </a>
+
+                <a href="portfolio.html" class="finorix-admin-nav-link">
+
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <span>Portfolio Overview</span>
+
+                </a>
+
+            </nav>
+
+            <div class="finorix-admin-support">
+
+                <div class="finorix-admin-support-icon">
+                    <i class="bi bi-headset"></i>
+                </div>
+
+                <strong>Need assistance?</strong>
+
+                <p>
+                    Access support for administrative and account-related queries.
+                </p>
+
+                <a href="error.html">
+                    Contact Support
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+
+            </div>
+
+            <div class="finorix-admin-sidebar-bottom">
+
+                <button type="button" id="finorixAdminLogout">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+        <div class="finorix-admin-overlay" id="finorixAdminOverlay"></div>
+
+        <main class="finorix-admin-main">
+
+            <header class="finorix-admin-topbar">
+
+                <div class="finorix-admin-topbar-left">
+
+                    <button type="button"
+                        id="finorixAdminMenuButton"
+                        class="finorix-admin-menu-button"
+                        aria-label="Open navigation menu"
+                        aria-controls="finorixAdminSidebar"
+                        aria-expanded="false">
+
+                        <i class="bi bi-list"></i>
+
+                    </button>
+
+                    <a href="admin-dashboard.html" class="finorix-admin-mobile-logo">
+                        <img src="Assets/blacklogo.webp" alt="Finorix">
+                    </a>
+
+                    <div class="finorix-admin-page-heading">
+                        <span>WEALTH MANAGEMENT</span>
+                        <h1>ADMIN DASHBOARD</h1>
+                    </div>
+
+                </div>
+
+                <div class="finorix-admin-topbar-actions">
+
+                    <a href="error.html"
+                        class="finorix-admin-topbar-icon"
+                        aria-label="Search">
+
+                        <i class="bi bi-search"></i>
+
+                    </a>
+
+                    <a href="error.html"
+                        class="finorix-admin-topbar-icon finorix-admin-notification"
+                        aria-label="Notifications">
+
+                        <i class="bi bi-bell"></i>
+                        <span></span>
+
+                    </a>
+
+                    <div class="finorix-admin-topbar-user">
+                          <a href="error.html">
+                        <div class="finorix-admin-topbar-avatar">
+                            <i class="bi bi-person-fill-gear"></i>
+                        </a>
+                        </div>
+
+                        <div>
+                            <strong id="finorixAdminHeaderName">Administrator</strong>
+                            <span>Administrator Account</span>
+                        </div>
+
+                        <i class="bi bi-chevron-down finorix-admin-user-arrow"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <div class="finorix-admin-content">
+
+                <section class="finorix-admin-hero">
+
+                    <div class="finorix-admin-hero-content">
+
+                        <span class="finorix-admin-date" id="finorixAdminCurrentDate"></span>
+
+                        <div class="finorix-admin-hero-label">
+                            <span></span>
+                            YOUR WEALTH MANAGEMENT OVERVIEW
+                        </div>
+
+                        <h2>
+                            Welcome Back,<br>
+                            <strong id="finorixAdminWelcomeName">Administrator</strong>
+                        </h2>
+
+                        <p>
+                            Monitor client activity, review portfolio performance,
+                            and keep your wealth advisory operations organized
+                            from one central dashboard.
+                        </p>
+
+                        <div class="finorix-admin-hero-actions">
+
+                            <a href="error.html" class="finorix-admin-primary-button">
+                                MANAGE CLIENTS
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                            <a href="error.html"
+                                class="finorix-admin-secondary-button">
+
+                                VIEW ACTIVITY
+                                <i class="bi bi-arrow-down"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="finorix-admin-hero-visual" aria-hidden="true">
+
+                        <div class="finorix-admin-orbit finorix-admin-orbit-one"></div>
+                        <div class="finorix-admin-orbit finorix-admin-orbit-two"></div>
+                        <div class="finorix-admin-orbit finorix-admin-orbit-three"></div>
+
+                        <div class="finorix-admin-orbit-center">
+                            <i class="bi bi-graph-up-arrow"></i>
+                            <strong>FINORIX</strong>
+                            <span>WEALTH</span>
+                        </div>
+
+                        <span class="finorix-admin-orbit-dot dot-one"></span>
+                        <span class="finorix-admin-orbit-dot dot-two"></span>
+                        <span class="finorix-admin-orbit-dot dot-three"></span>
+                        <span class="finorix-admin-orbit-dot dot-four"></span>
+
+                    </div>
+
+                </section>
+
+                <section class="finorix-admin-stats">
+
+                    <article class="finorix-admin-stat-card">
+
+                        <div class="finorix-admin-stat-top">
+                            <div class="finorix-admin-stat-icon stat-green">
+                                <i class="bi bi-people"></i>
+                            </div>
+
+                            <span class="finorix-admin-stat-tag">CLIENTS</span>
+                        </div>
+
+                        <span class="finorix-admin-stat-title">Total Clients</span>
+
+                        <h3>1,248</h3>
+
+                        <p>
+                            <i class="bi bi-info-circle"></i>
+                            Illustrative dashboard data
+                        </p>
+
+                    </article>
+
+                    <article class="finorix-admin-stat-card">
+
+                        <div class="finorix-admin-stat-top">
+                            <div class="finorix-admin-stat-icon stat-blue">
+                                <i class="bi bi-wallet2"></i>
+                            </div>
+
+                            <span class="finorix-admin-stat-tag">ASSETS</span>
+                        </div>
+
+                        <span class="finorix-admin-stat-title">Assets Under Management</span>
+
+                        <h3>₹8.42 Cr</h3>
+
+                        <p>
+                            <i class="bi bi-info-circle"></i>
+                            Sample portfolio valuation
+                        </p>
+
+                    </article>
+
+                    <article class="finorix-admin-stat-card">
+
+                        <div class="finorix-admin-stat-top">
+                            <div class="finorix-admin-stat-icon stat-orange">
+                                <i class="bi bi-bullseye"></i>
+                            </div>
+
+                            <span class="finorix-admin-stat-tag">PLANNING</span>
+                        </div>
+
+                        <span class="finorix-admin-stat-title">Active Financial Goals</span>
+
+                        <h3>856</h3>
+
+                        <p>
+                            <i class="bi bi-info-circle"></i>
+                            Sample client goal records
+                        </p>
+
+                    </article>
+
+                    <article class="finorix-admin-stat-card">
+
+                        <div class="finorix-admin-stat-top">
+                            <div class="finorix-admin-stat-icon stat-purple">
+                                <i class="bi bi-calendar-check"></i>
+                            </div>
+
+                            <span class="finorix-admin-stat-tag">SCHEDULE</span>
+                        </div>
+
+                        <span class="finorix-admin-stat-title">Pending Appointments</span>
+
+                        <h3>18</h3>
+
+                        <p>
+                            <i class="bi bi-info-circle"></i>
+                            Sample appointment records
+                        </p>
+
+                    </article>
+
+                </section>
+
+                <section class="finorix-admin-quick-actions">
+
+                    <a href="error.html" class="finorix-admin-action-card">
+
+                        <div class="finorix-admin-action-icon action-green">
+                            <i class="bi bi-person-plus"></i>
+                        </div>
+
+                        <div>
+                            <h3>Add Client</h3>
+                            <p>Create a client record</p>
+                        </div>
+
+                        <i class="bi bi-arrow-up-right finorix-admin-action-arrow"></i>
+
+                    </a>
+
+                    <a href="error.html" class="finorix-admin-action-card">
+
+                        <div class="finorix-admin-action-icon action-blue">
+                            <i class="bi bi-calendar2-plus"></i>
+                        </div>
+
+                        <div>
+                            <h3>Appointments</h3>
+                            <p>Review scheduled meetings</p>
+                        </div>
+
+                        <i class="bi bi-arrow-up-right finorix-admin-action-arrow"></i>
+
+                    </a>
+
+                    <a href="error.html" class="finorix-admin-action-card">
+
+                        <div class="finorix-admin-action-icon action-orange">
+                            <i class="bi bi-file-earmark-bar-graph"></i>
+                        </div>
+
+                        <div>
+                            <h3>Reports</h3>
+                            <p>Review management reports</p>
+                        </div>
+
+                        <i class="bi bi-arrow-up-right finorix-admin-action-arrow"></i>
+
+                    </a>
+
+                    <a href="error.html" class="finorix-admin-action-card">
+
+                        <div class="finorix-admin-action-icon action-purple">
+                            <i class="bi bi-gear"></i>
+                        </div>
+
+                        <div>
+                            <h3>Settings</h3>
+                            <p>Manage account preferences</p>
+                        </div>
+
+                        <i class="bi bi-arrow-up-right finorix-admin-action-arrow"></i>
+
+                    </a>
+
+                </section>
+
+                <section class="finorix-admin-analytics-grid">
+
+                    <article class="finorix-admin-panel finorix-admin-performance-panel">
+
+                        <div class="finorix-admin-panel-heading">
+
+                            <div>
+                                <span>PORTFOLIO OVERVIEW</span>
+                                <h3>Assets Under Management</h3>
+                            </div>
+
+                            <a href="error.html" class="finorix-admin-view-link">
+                                VIEW REPORT
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+
+                        </div>
+
+                        <div class="finorix-admin-performance-summary">
+
+                            <div>
+                                <span>Illustrative portfolio value</span>
+                                <strong>₹8,42,00,000</strong>
+                            </div>
+
+                            <span class="finorix-admin-sample-label">
+                                Sample data
+                            </span>
+
+                        </div>
+
+                        <div class="finorix-admin-performance-chart">
+                            <canvas id="finorixAdminPerformanceChart"
+                                role="img"
+                                aria-label="Illustrative assets under management chart"></canvas>
+                        </div>
+
+                    </article>
+
+                    <article class="finorix-admin-panel finorix-admin-allocation-panel">
+
+                        <div class="finorix-admin-panel-heading">
+
+                            <div>
+                                <span>ASSET BREAKDOWN</span>
+                                <h3>Portfolio Allocation</h3>
+                            </div>
+
+                            <i class="bi bi-pie-chart finorix-admin-panel-icon"></i>
+
+                        </div>
+
+                        <div class="finorix-admin-allocation-chart">
+
+                            <canvas id="finorixAdminAllocationChart"
+                                role="img"
+                                aria-label="Illustrative portfolio allocation chart"></canvas>
+
+                            <div class="finorix-admin-allocation-center">
+                                <span>PORTFOLIO</span>
+                                <strong>100%</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="finorix-admin-allocation-list">
+
+                            <div>
+                                <span>
+                                    <i class="allocation-equity"></i>
+                                    Equity
+                                </span>
+                                <strong>45%</strong>
+                            </div>
+
+                            <div>
+                                <span>
+                                    <i class="allocation-debt"></i>
+                                    Debt
+                                </span>
+                                <strong>25%</strong>
+                            </div>
+
+                            <div>
+                                <span>
+                                    <i class="allocation-funds"></i>
+                                    Mutual Funds
+                                </span>
+                                <strong>20%</strong>
+                            </div>
+
+                            <div>
+                                <span>
+                                    <i class="allocation-other"></i>
+                                    Other Assets
+                                </span>
+                                <strong>10%</strong>
+                            </div>
+
+                        </div>
+
+                        <p class="finorix-admin-chart-note">
+                            Illustrative allocation only. Not live financial data.
+                        </p>
+
+                    </article>
+
+                </section>
+
+                <section class="finorix-admin-bottom-grid" id="finorixAdminActivity">
+
+                    <article class="finorix-admin-panel finorix-admin-activity-panel">
+
+                        <div class="finorix-admin-panel-heading">
+
+                            <div>
+                                <span>CLIENT RELATIONSHIPS</span>
+                                <h3>Recent Client Activity</h3>
+                            </div>
+
+                            <a href="error.html" class="finorix-admin-view-link">
+                                VIEW ALL
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+
+                        </div>
+
+                        <div class="finorix-admin-table-wrapper">
+
+                            <table class="finorix-admin-table">
+
+                                <thead>
+                                    <tr>
+                                        <th>CLIENT</th>
+                                        <th>ACTIVITY</th>
+                                        <th>DATE</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+                                        <td>
+                                            <div class="finorix-admin-client">
+                                                <span class="client-avatar avatar-a">AK</span>
+                                                <div>
+                                                    <strong>Arun Kumar</strong>
+                                                    <span>Client ID: CL1001</span>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                        <td>Portfolio Review</td>
+                                        <td>23 Oct 2026</td>
+
+                                        <td>
+                                            <span class="finorix-admin-status status-pending">
+                                                Pending
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="finorix-admin-client">
+                                                <span class="client-avatar avatar-b">SP</span>
+                                                <div>
+                                                    <strong>Shreya Patel</strong>
+                                                    <span>Client ID: CL1002</span>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                        <td>Financial Planning</td>
+                                        <td>22 Oct 2026</td>
+
+                                        <td>
+                                            <span class="finorix-admin-status status-completed">
+                                                Completed
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="finorix-admin-client">
+                                                <span class="client-avatar avatar-c">RV</span>
+                                                <div>
+                                                    <strong>Rahul Verma</strong>
+                                                    <span>Client ID: CL1003</span>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                        <td>Investment Review</td>
+                                        <td>21 Oct 2026</td>
+
+                                        <td>
+                                            <span class="finorix-admin-status status-review">
+                                                In Review
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="finorix-admin-client">
+                                                <span class="client-avatar avatar-d">PM</span>
+                                                <div>
+                                                    <strong>Priya Menon</strong>
+                                                    <span>Client ID: CL1004</span>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                        <td>Goal Assessment</td>
+                                        <td>20 Oct 2026</td>
+
+                                        <td>
+                                            <span class="finorix-admin-status status-completed">
+                                                Completed
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </article>
+
+                    <article class="finorix-admin-panel finorix-admin-appointments-panel">
+
+                        <div class="finorix-admin-panel-heading">
+
+                            <div>
+                                <span>YOUR SCHEDULE</span>
+                                <h3>Upcoming Appointments</h3>
+                            </div>
+
+                            <a href="error.html"
+                                class="finorix-admin-calendar-button"
+                                aria-label="View calendar">
+
+                                <i class="bi bi-calendar3"></i>
+
+                            </a>
+
+                        </div>
+
+                        <div class="finorix-admin-appointments">
+
+                            <div class="finorix-admin-appointment">
+
+                                <div class="finorix-admin-appointment-date">
+                                    <strong>24</strong>
+                                    <span>OCT</span>
+                                </div>
+
+                                <div class="finorix-admin-appointment-info">
+                                    <strong>Portfolio Consultation</strong>
+                                    <span>Arun Kumar</span>
+                                    <small>
+                                        <i class="bi bi-clock"></i>
+                                        10:30 AM
+                                    </small>
+                                </div>
+
+                                <span class="appointment-dot"></span>
+
+                            </div>
+
+                            <div class="finorix-admin-appointment">
+
+                                <div class="finorix-admin-appointment-date">
+                                    <strong>25</strong>
+                                    <span>OCT</span>
+                                </div>
+
+                                <div class="finorix-admin-appointment-info">
+                                    <strong>Retirement Planning</strong>
+                                    <span>Shreya Patel</span>
+                                    <small>
+                                        <i class="bi bi-clock"></i>
+                                        12:00 PM
+                                    </small>
+                                </div>
+
+                                <span class="appointment-dot appointment-blue"></span>
+
+                            </div>
+
+                            <div class="finorix-admin-appointment">
+
+                                <div class="finorix-admin-appointment-date">
+                                    <strong>27</strong>
+                                    <span>OCT</span>
+                                </div>
+
+                                <div class="finorix-admin-appointment-info">
+                                    <strong>Financial Review</strong>
+                                    <span>Rahul Verma</span>
+                                    <small>
+                                        <i class="bi bi-clock"></i>
+                                        03:00 PM
+                                    </small>
+                                </div>
+
+                                <span class="appointment-dot appointment-orange"></span>
+
+                            </div>
+
+                        </div>
+
+                        <a href="error.html" class="finorix-admin-all-appointments">
+                            VIEW ALL APPOINTMENTS
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </article>
+
+                </section>
+
+                <section class="finorix-admin-insight">
+
+                    <div class="finorix-admin-insight-icon">
+                        <i class="bi bi-lightbulb"></i>
+                    </div>
+
+                    <div class="finorix-admin-insight-content">
+                        <span>ADMINISTRATIVE INSIGHT</span>
+
+                        <h3>Keep client goals at the center of every decision.</h3>
+
+                        <p>
+                            Review client needs, document important updates, and
+                            maintain a clear view of upcoming advisory activities.
+                        </p>
+                    </div>
+
+                    <a href="error.html" class="finorix-admin-insight-button">
+                        VIEW REPORTS
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                </section>
+
+                <footer class="finorix-admin-footer">
+
+                    <span>
+                        © <span id="finorixAdminCurrentYear"></span>
+                        Wealth Advisory
+                    </span>
+
+                    <span>WEALTH MANAGEMENT PORTAL</span>
+
+                </footer>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="admin-dashboard.js"></script>
+
+</body>
+
+</html>

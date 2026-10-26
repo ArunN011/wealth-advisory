@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102C26">
+
+    <title>Client Management | Finorix Wealth Advisory</title>
+
+    <link rel="icon" href="images/finorix-logo.webp">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="client.css">
+</head>
+
+<body>
+
+    <div class="finorix-client-app">
+
+        <aside class="finorix-client-sidebar" id="finorixClientSidebar">
+
+            <a href="admin-dashboard.html" class="finorix-client-brand">
+                <img src="Assets/blacklogo.webp" alt="Finorix Wealth Advisory">
+            </a>
+
+            <div class="finorix-client-admin-profile">
+                <div class="finorix-client-admin-avatar">
+                    <i class="bi bi-person-fill-gear"></i>
+                </div>
+
+                <div class="finorix-client-admin-details">
+                    <strong id="finorixClientAdminName">Administrator</strong>
+                    <span>Wealth Administrator</span>
+                </div>
+            </div>
+
+            <span class="finorix-client-nav-heading">ADMINISTRATION</span>
+
+            <nav class="finorix-client-navigation">
+
+                <a href="admin-dashboard.html" class="finorix-client-nav-link">
+                    <i class="bi bi-grid-1x2"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="client.html" class="finorix-client-nav-link active"
+                    aria-current="page">
+                    <i class="bi bi-people"></i>
+                    <span>Client Management</span>
+                </a>
+
+                <a href="portfolio.html" class="finorix-client-nav-link">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <span>Portfolio Overview</span>
+                </a>
+
+            </nav>
+
+            <div class="finorix-client-sidebar-help">
+                <div class="finorix-client-help-icon">
+                    <i class="bi bi-headset"></i>
+                </div>
+
+                <h3>Need assistance?</h3>
+
+                <p>
+                    Get support for your client management activities.
+                </p>
+
+                <a href="error.html">
+                    Contact Support
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+            </div>
+
+            <button type="button" class="finorix-client-logout"
+                id="finorixClientLogout">
+
+                <i class="bi bi-box-arrow-left"></i>
+                <span>Logout</span>
+
+            </button>
+
+        </aside>
+
+        <div class="finorix-client-overlay" id="finorixClientOverlay"></div>
+
+        <main class="finorix-client-main">
+
+            <header class="finorix-client-header">
+
+                <div class="finorix-client-header-left">
+
+                    <button type="button"
+                        class="finorix-client-menu-button"
+                        id="finorixClientMenuButton"
+                        aria-label="Open navigation menu"
+                        aria-controls="finorixClientSidebar"
+                        aria-expanded="false">
+
+                        <i class="bi bi-list"></i>
+
+                    </button>
+
+                    <a href="admin-dashboard.html" class="finorix-client-mobile-brand">
+                        <img src="Assets/blacklogo.webp" alt="Finorix">
+                    </a>
+
+                    <div class="finorix-client-header-title">
+                        <span>WEALTH MANAGEMENT</span>
+                        <h1>CLIENT MANAGEMENT</h1>
+                    </div>
+
+                </div>
+
+                <div class="finorix-client-header-actions">
+
+                    <a href="error.html" class="finorix-client-header-icon"
+                        aria-label="Search">
+
+                        <i class="bi bi-search"></i>
+
+                    </a>
+
+                    <a href="error.html"
+                        class="finorix-client-header-icon finorix-client-bell"
+                        aria-label="Notifications">
+
+                        <i class="bi bi-bell"></i>
+                        <span></span>
+
+                    </a>
+
+                    <div class="finorix-client-header-user">
+
+                        <div class="finorix-client-header-avatar">
+                            <i class="bi bi-person-fill-gear"></i>
+                        </div>
+
+                        <div>
+                            <strong id="finorixClientHeaderName">Administrator</strong>
+                            <span>Administrator Account</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <div class="finorix-client-content">
+
+                <section class="finorix-client-welcome">
+
+                    <div class="finorix-client-welcome-content">
+
+                        <div class="finorix-client-breadcrumb">
+                            <a href="admin-dashboard.html">Dashboard</a>
+                            <i class="bi bi-chevron-right"></i>
+                            <span>Client Management</span>
+                        </div>
+
+                        <span class="finorix-client-eyebrow">
+                            CLIENT RELATIONSHIP MANAGEMENT
+                        </span>
+
+                        <h2>
+                            Manage Your
+                            <strong>Client Relationships.</strong>
+                        </h2>
+
+                        <p>
+                            Keep client information organized, monitor financial
+                            planning relationships, and manage client records
+                            from one central workspace.
+                        </p>
+
+                    </div>
+
+                    <div class="finorix-client-welcome-icon">
+                        <div>
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <span>CLIENT CARE</span>
+                    </div>
+
+                </section>
+
+                <section class="finorix-client-stats">
+
+                    <article class="finorix-client-stat-card">
+                        <div class="finorix-client-stat-top">
+                            <div class="finorix-client-stat-icon client-stat-green">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <span class="finorix-client-stat-label">TOTAL</span>
+                        </div>
+
+                        <span>Total Clients</span>
+                        <h3 id="finorixClientTotal">8</h3>
+                        <p>Client records in this demo</p>
+                    </article>
+
+                    <article class="finorix-client-stat-card">
+                        <div class="finorix-client-stat-top">
+                            <div class="finorix-client-stat-icon client-stat-blue">
+                                <i class="bi bi-person-check"></i>
+                            </div>
+                            <span class="finorix-client-stat-label">ACTIVE</span>
+                        </div>
+
+                        <span>Active Clients</span>
+                        <h3 id="finorixClientActive">6</h3>
+                        <p>Currently active demo records</p>
+                    </article>
+
+                    <article class="finorix-client-stat-card">
+                        <div class="finorix-client-stat-top">
+                            <div class="finorix-client-stat-icon client-stat-orange">
+                                <i class="bi bi-calendar-event"></i>
+                            </div>
+                            <span class="finorix-client-stat-label">REVIEW</span>
+                        </div>
+
+                        <span>Reviews Due</span>
+                        <h3 id="finorixClientReviews">3</h3>
+                        <p>Illustrative review reminders</p>
+                    </article>
+
+                    <article class="finorix-client-stat-card">
+                        <div class="finorix-client-stat-top">
+                            <div class="finorix-client-stat-icon client-stat-purple">
+                                <i class="bi bi-bullseye"></i>
+                            </div>
+                            <span class="finorix-client-stat-label">PLANNING</span>
+                        </div>
+
+                        <span>Financial Plans</span>
+                        <h3 id="finorixClientPlans">5</h3>
+                        <p>Illustrative planning records</p>
+                    </article>
+
+                </section>
+
+                <section class="finorix-client-toolbar">
+
+                    <div class="finorix-client-toolbar-heading">
+                        <span>CLIENT DIRECTORY</span>
+                        <h2>All Clients</h2>
+                        <p>Search and manage your client records.</p>
+                    </div>
+
+                    <div class="finorix-client-toolbar-actions">
+
+                        <button type="button"
+                            class="finorix-client-export-button"
+                            id="finorixClientExport">
+
+                            <i class="bi bi-download"></i>
+                            Export CSV
+
+                        </button>
+
+                        <button type="button"
+                            class="finorix-client-add-button"
+                            id="finorixClientAddButton">
+
+                            <i class="bi bi-plus-lg"></i>
+                            Add New Client
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <section class="finorix-client-directory">
+
+                    <div class="finorix-client-filters">
+
+                        <label class="finorix-client-search">
+                            <i class="bi bi-search"></i>
+
+                            <input type="search"
+                                id="finorixClientSearch"
+                                placeholder="Search name, email or client ID..."
+                                aria-label="Search clients">
+                        </label>
+
+                        <label class="finorix-client-filter-select">
+                            <span>Status</span>
+
+                            <select id="finorixClientStatusFilter">
+                                <option value="all">All Statuses</option>
+                                <option value="Active">Active</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                        </label>
+
+                        <label class="finorix-client-filter-select">
+                            <span>Financial Plan</span>
+
+                            <select id="finorixClientPlanFilter">
+                                <option value="all">All Plans</option>
+                                <option value="Retirement Planning">Retirement Planning</option>
+                                <option value="Wealth Growth">Wealth Growth</option>
+                                <option value="Tax Planning">Tax Planning</option>
+                                <option value="Education Planning">Education Planning</option>
+                                <option value="Not Assigned">Not Assigned</option>
+                            </select>
+                        </label>
+
+                        <button type="button"
+                            id="finorixClientResetFilters"
+                            class="finorix-client-reset-button">
+
+                            <i class="bi bi-arrow-counterclockwise"></i>
+                            Reset
+
+                        </button>
+
+                    </div>
+
+                    <div class="finorix-client-result-bar">
+                        <span id="finorixClientResultCount">
+                            Showing 8 clients
+                        </span>
+
+                        <span class="finorix-client-demo-note">
+                            <i class="bi bi-info-circle"></i>
+                            Sample client data
+                        </span>
+                    </div>
+
+                    <div class="finorix-client-table-wrap">
+
+                        <table class="finorix-client-table">
+
+                            <thead>
+                                <tr>
+                                    <th>CLIENT</th>
+                                    <th>CLIENT ID</th>
+                                    <th>FINANCIAL PLAN</th>
+                                    <th>JOINED DATE</th>
+                                    <th>STATUS</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="finorixClientTableBody"></tbody>
+
+                        </table>
+
+                        <div class="finorix-client-empty" id="finorixClientEmpty"
+                            hidden>
+
+                            <i class="bi bi-person-x"></i>
+                            <h3>No clients found</h3>
+                            <p>Try another search or change your filters.</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="finorix-client-table-footer">
+
+                        <span id="finorixClientPageInfo">
+                            Showing 1–8 of 8 clients
+                        </span>
+
+                        <div class="finorix-client-pagination">
+                            <button type="button" id="finorixClientPrev"
+                                aria-label="Previous page" disabled>
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+
+                            <span id="finorixClientPageNumber">1</span>
+
+                            <button type="button" id="finorixClientNext"
+                                aria-label="Next page" disabled>
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="finorix-client-bottom-grid">
+
+                    <article class="finorix-client-insight-card">
+
+                        <div class="finorix-client-insight-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+
+                        <div>
+                            <span>CLIENT RELATIONSHIPS</span>
+                            <h3>Build trust through thoughtful financial planning.</h3>
+                            <p>
+                                Keep records accurate, follow up on review dates,
+                                and help clients stay connected to their financial goals.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="finorix-client-review-card">
+
+                        <div class="finorix-client-review-heading">
+                            <div>
+                                <span>CLIENT CARE</span>
+                                <h3>Review Reminders</h3>
+                            </div>
+
+                            <i class="bi bi-calendar2-check"></i>
+                        </div>
+
+                        <div class="finorix-client-review-item">
+                            <span class="finorix-client-review-dot"></span>
+                            <div>
+                                <strong>Portfolio review</strong>
+                                <span>Arun Kumar · 24 Oct 2026</span>
+                            </div>
+                        </div>
+
+                        <div class="finorix-client-review-item">
+                            <span class="finorix-client-review-dot review-dot-blue"></span>
+                            <div>
+                                <strong>Retirement planning</strong>
+                                <span>Shreya Patel · 25 Oct 2026</span>
+                            </div>
+                        </div>
+
+                        <div class="finorix-client-review-item">
+                            <span class="finorix-client-review-dot review-dot-orange"></span>
+                            <div>
+                                <strong>Financial assessment</strong>
+                                <span>Rahul Verma · 27 Oct 2026</span>
+                            </div>
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <footer class="finorix-client-footer">
+                    <span>
+                        © <span id="finorixClientYear"></span>
+                        Finorix Wealth Advisory
+                    </span>
+
+                    <span>CLIENT MANAGEMENT PORTAL</span>
+                </footer>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <div class="finorix-client-modal" id="finorixClientModal"
+        aria-hidden="true">
+
+        <div class="finorix-client-modal-backdrop"
+            id="finorixClientModalBackdrop"></div>
+
+        <section class="finorix-client-modal-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="finorixClientModalTitle">
+
+            <div class="finorix-client-modal-heading">
+
+                <div>
+                    <span>CLIENT DIRECTORY</span>
+                    <h2 id="finorixClientModalTitle">Add New Client</h2>
+                </div>
+
+                <button type="button"
+                    id="finorixClientModalClose"
+                    aria-label="Close client form">
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+            <form id="finorixClientForm">
+
+                <input type="hidden" id="finorixClientEditId">
+
+                <label class="finorix-client-form-field">
+                    <span>Full Name *</span>
+
+                    <input type="text"
+                        id="finorixClientName"
+                        maxlength="80"
+                        autocomplete="name"
+                        required>
+
+                </label>
+
+                <label class="finorix-client-form-field">
+                    <span>Email Address *</span>
+
+                    <input type="email"
+                        id="finorixClientEmail"
+                        maxlength="120"
+                        autocomplete="email"
+                        required>
+
+                </label>
+
+                <label class="finorix-client-form-field">
+                    <span>Phone Number *</span>
+
+                    <input type="tel"
+                        id="finorixClientPhone"
+                        maxlength="16"
+                        inputmode="tel"
+                        autocomplete="tel"
+                        pattern="[+0-9 ()-]{7,16}"
+                        required>
+
+                </label>
+
+                <label class="finorix-client-form-field">
+                    <span>Financial Plan *</span>
+
+                    <select id="finorixClientFinancialPlan" required>
+                        <option value="">Select a plan</option>
+                        <option value="Retirement Planning">Retirement Planning</option>
+                        <option value="Wealth Growth">Wealth Growth</option>
+                        <option value="Tax Planning">Tax Planning</option>
+                        <option value="Education Planning">Education Planning</option>
+                        <option value="Not Assigned">Not Assigned</option>
+                    </select>
+
+                </label>
+
+                <label class="finorix-client-form-field">
+                    <span>Status *</span>
+
+                    <select id="finorixClientFormStatus" required>
+                        <option value="Active">Active</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+
+                </label>
+
+                <div class="finorix-client-form-actions">
+
+                    <button type="button"
+                        class="finorix-client-cancel-button"
+                        id="finorixClientCancel">
+
+                        Cancel
+
+                    </button>
+
+                    <button type="submit"
+                        class="finorix-client-save-button"
+                        id="finorixClientSave">
+
+                        Save Client
+
+                    </button>
+
+                </div>
+
+                <p class="finorix-client-form-message"
+                    id="finorixClientFormMessage"
+                    role="status"
+                    aria-live="polite"></p>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <div class="finorix-client-toast"
+        id="finorixClientToast"
+        role="status"
+        aria-live="polite"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.2/gsap.min.js"></script>
+    <script src="client.js"></script>
+
+</body>
+
+</html>

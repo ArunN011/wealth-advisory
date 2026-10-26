@@ -1,0 +1,1501 @@
+:root {
+    --admin-green: #102c26;
+    --admin-teal: #328e80;
+    --admin-ivory: #f7f8f4;
+    --admin-white: #ffffff;
+    --admin-text: #243b35;
+    --admin-muted: #83918b;
+    --admin-border: #e8ede8;
+    --admin-gold: #b99358;
+    --admin-sidebar-width: 255px;
+    --admin-header-height: 68px;
+    --admin-radius: 13px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: var(--admin-ivory);
+    color: var(--admin-text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    overflow-x: clip;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+body.finorix-admin-scroll-locked {
+    overflow: hidden;
+    touch-action: none;
+}
+
+img,
+svg,
+canvas,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+select {
+    font: inherit;
+    max-width: 100%;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--admin-teal);
+    outline-offset: 3px;
+}
+
+.finorix-admin-layout {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+.finorix-admin-sidebar {
+    position: fixed;
+    z-index: 1100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: var(--admin-sidebar-width);
+    height: 100vh;
+    height: 100dvh;
+    padding: 18px 15px 13px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: var(--admin-green);
+    color: var(--admin-white);
+    scrollbar-width: thin;
+    scrollbar-color: #34564d transparent;
+    overscroll-behavior: contain;
+}
+
+.finorix-admin-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 38px;
+    margin-bottom: 20px;
+}
+
+.finorix-admin-brand img {
+    display: block;
+    width: 105px;
+    max-width: 100%;
+    max-height: 95px;
+    object-fit: contain;
+}
+
+.finorix-admin-profile {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 9px;
+    min-width: 0;
+    padding: 10px 9px;
+    margin-bottom: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.055);
+}
+
+.finorix-admin-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #31584e;
+    color: #d6e8df;
+    font-size: 15px;
+}
+
+.finorix-admin-profile-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.finorix-admin-profile-details h3 {
+    overflow: hidden;
+    color: #f4f8f4;
+    font-size: 11px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.finorix-admin-profile-details p {
+    overflow: hidden;
+    margin-top: 2px;
+    color: #a8beb4;
+    font-size: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.finorix-admin-online-indicator {
+    flex: 0 0 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #65d8a3;
+    box-shadow: 0 0 8px rgba(101, 216, 163, 0.4);
+}
+
+.finorix-admin-section-label {
+    margin: 0 0 9px 5px;
+    color: #8ba69b;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.finorix-admin-navigation {
+    display: grid;
+    gap: 5px;
+}
+
+.finorix-admin-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+    min-height: 38px;
+    padding: 9px 10px;
+    border-radius: 8px;
+    color: #b4c8bf;
+    font-size: 11px;
+    font-weight: 600;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.finorix-admin-nav-link i {
+    flex: 0 0 14px;
+    font-size: 14px;
+}
+
+.finorix-admin-nav-link:hover {
+    background: rgba(255, 255, 255, 0.075);
+    color: var(--admin-white);
+}
+
+.finorix-admin-nav-link.active {
+    background: var(--admin-teal);
+    color: var(--admin-white);
+}
+
+.finorix-admin-nav-link:active {
+    transform: scale(0.985);
+}
+
+.finorix-admin-support-card {
+    flex-shrink: 0;
+    padding: 12px 10px;
+    margin-top: 23px;
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.finorix-admin-support-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    margin-bottom: 9px;
+    border-radius: 7px;
+    background: #294d43;
+    color: #d8e8df;
+    font-size: 14px;
+}
+
+.finorix-admin-support-card h3 {
+    margin-bottom: 5px;
+    color: #f5f8f5;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.finorix-admin-support-card p {
+    color: #a6bdb2;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.finorix-admin-support-card > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 9px;
+    color: #e0eee6;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.finorix-admin-support-card > a:hover {
+    color: #79d5b5;
+}
+
+.finorix-admin-sidebar-bottom {
+    flex-shrink: 0;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.075);
+}
+
+.finorix-admin-logout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 9px 7px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #c0d0c8;
+    text-align: left;
+    font-size: 11px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.finorix-admin-logout i {
+    font-size: 14px;
+}
+
+.finorix-admin-logout:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+}
+
+.finorix-admin-main {
+    width: calc(100% - var(--admin-sidebar-width));
+    max-width: calc(100% - var(--admin-sidebar-width));
+    min-width: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin-left: var(--admin-sidebar-width);
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+.finorix-admin-topbar {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: var(--admin-sidebar-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: var(--admin-header-height);
+    padding: 0 30px;
+    border-bottom: 1px solid var(--admin-border);
+    background: rgba(255, 255, 255, 0.97);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+
+.finorix-admin-topbar-left,
+.finorix-admin-topbar-right {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.finorix-admin-topbar-left {
+    flex: 1 1 auto;
+    gap: 13px;
+}
+
+.finorix-admin-topbar-right {
+    flex: 0 1 auto;
+    gap: 21px;
+}
+
+.finorix-admin-page-heading {
+    min-width: 0;
+}
+
+.finorix-admin-page-heading > span {
+    display: block;
+    margin-bottom: 1px;
+    color: var(--admin-muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.finorix-admin-page-heading h1 {
+    overflow: hidden;
+    color: var(--admin-green);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.35;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.finorix-admin-date {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #73847b;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.finorix-admin-date i {
+    font-size: 14px;
+}
+
+.finorix-admin-notification {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--admin-border);
+    border-radius: 9px;
+    background: #ffffff;
+    color: var(--admin-green);
+    font-size: 15px;
+}
+
+.finorix-admin-notification > span {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 5px;
+    height: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    background: #d67c5b;
+}
+
+.finorix-admin-topbar-user {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+}
+
+.finorix-admin-topbar-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: #e7f0e9;
+    color: var(--admin-green);
+    font-size: 16px;
+}
+
+.finorix-admin-topbar-user strong,
+.finorix-admin-topbar-user span {
+    display: block;
+}
+
+.finorix-admin-topbar-user strong {
+    max-width: 140px;
+    overflow: hidden;
+    color: var(--admin-green);
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.finorix-admin-topbar-user span {
+    margin-top: 2px;
+    color: var(--admin-muted);
+    font-size: 10px;
+}
+
+.finorix-admin-menu-button,
+.finorix-admin-mobile-logo {
+    display: none;
+    filter: brightness(1) saturate(100%) invert(66%) sepia(12%) saturate(700%) hue-rotate(165deg) brightness(88%) contrast(88%);
+}
+
+.finorix-admin-content {
+    width: 100%;
+    max-width: 1700px;
+    min-width: 0;
+    padding: calc(var(--admin-header-height) + 27px) 30px 20px;
+    margin: 0 auto;
+}
+
+.finorix-admin-content > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.finorix-admin-welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    min-width: 0;
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(16, 44, 38, 0.06);
+    border-radius: var(--admin-radius);
+    background: linear-gradient(115deg, #102c26 0%, #194b40 70%, #24695a 100%);
+    box-shadow: 0 7px 24px rgba(16, 44, 38, 0.07);
+    color: #ffffff;
+}
+
+.finorix-admin-welcome > div {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.finorix-admin-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 10px;
+    color: #b9d6c9;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.finorix-admin-status-dot {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #7bd5a7;
+}
+
+.finorix-admin-welcome h2 {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    color: #ffffff;
+    font-size: clamp(20px, 2.4vw, 30px);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.finorix-admin-welcome h2 span {
+    color: #a8d7c2;
+}
+
+.finorix-admin-welcome-description {
+    max-width: 510px;
+    margin-top: 8px;
+    color: #c1d5cb;
+    font-size: 12px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.finorix-admin-primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 8px;
+    min-height: 39px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--admin-green);
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.finorix-admin-primary-button:hover {
+    transform: translateY(-2px);
+    background: #e9f5ee;
+}
+
+.finorix-admin-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.finorix-admin-summary-card {
+    min-width: 0;
+    max-width: 100%;
+    padding: 17px;
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius);
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(20, 47, 38, 0.025);
+}
+
+.finorix-admin-summary-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-width: 0;
+    margin-bottom: 15px;
+}
+
+.finorix-admin-summary-top > span {
+    min-width: 0;
+    color: #7e8b84;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.finorix-admin-summary-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 33px;
+    width: 33px;
+    height: 33px;
+    border-radius: 9px;
+    background: #eaf3ed;
+    color: var(--admin-teal);
+    font-size: 16px;
+}
+
+.finorix-admin-summary-card h3 {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    color: var(--admin-green);
+    font-size: clamp(18px, 1.8vw, 23px);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.finorix-admin-summary-note {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 8px;
+    color: #819087;
+    font-size: 10px;
+}
+
+.finorix-admin-summary-note i {
+    flex-shrink: 0;
+    color: var(--admin-teal);
+}
+
+.finorix-admin-dashboard-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(270px, 1fr);
+    gap: 18px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.finorix-admin-dashboard-grid > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.finorix-admin-panel {
+    min-width: 0;
+    max-width: 100%;
+    padding: 21px;
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius);
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(20, 47, 38, 0.025);
+}
+
+.finorix-admin-panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    min-width: 0;
+}
+
+.finorix-admin-panel-heading > div {
+    min-width: 0;
+}
+
+.finorix-admin-panel-label {
+    display: block;
+    margin-bottom: 4px;
+    color: #89968f;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.finorix-admin-panel-heading h3 {
+    color: var(--admin-green);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.finorix-admin-panel-heading select {
+    flex-shrink: 0;
+    max-width: 145px;
+    min-height: 33px;
+    padding: 6px 8px;
+    border: 1px solid var(--admin-border);
+    border-radius: 7px;
+    background: #ffffff;
+    color: #64746b;
+    font-size: 10px;
+}
+
+.finorix-admin-chart-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.finorix-admin-chart-summary > div {
+    min-width: 0;
+}
+
+.finorix-admin-chart-summary > div > span {
+    color: #85928b;
+    font-size: 10px;
+}
+
+.finorix-admin-chart-summary h4 {
+    margin-top: 3px;
+    color: var(--admin-green);
+    font-size: 21px;
+    overflow-wrap: anywhere;
+}
+
+.finorix-admin-growth-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: #eaf5ed;
+    color: #2b8c61;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.finorix-admin-chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 225px;
+    margin-top: 13px;
+    overflow: hidden;
+}
+
+.finorix-admin-chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+}
+
+.finorix-admin-donut-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 240px;
+    height: 205px;
+    margin: 9px auto 5px;
+}
+
+.finorix-admin-donut-container canvas {
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+
+.finorix-admin-donut-center {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.finorix-admin-donut-center span {
+    color: #87938c;
+    font-size: 10px;
+}
+
+.finorix-admin-donut-center strong {
+    margin-top: 3px;
+    color: var(--admin-green);
+    font-size: 17px;
+}
+
+.finorix-admin-allocation-legend {
+    display: grid;
+    gap: 11px;
+    margin-top: 9px;
+}
+
+.finorix-admin-allocation-legend > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    color: #78877e;
+    font-size: 11px;
+}
+
+.finorix-admin-allocation-legend > div strong {
+    margin-left: auto;
+    color: var(--admin-green);
+    font-size: 11px;
+}
+
+.finorix-admin-legend-dot {
+    flex: 0 0 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 3px;
+}
+
+.legend-green {
+    background: #102c26;
+}
+
+.legend-teal {
+    background: #328e80;
+}
+
+.legend-gold {
+    background: #b99358;
+}
+
+.legend-gray {
+    background: #b8c5bc;
+}
+
+.finorix-admin-investments-panel {
+    width: 100%;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+.finorix-admin-investments-heading {
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.finorix-admin-table-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    min-width: 0;
+}
+
+.finorix-admin-search {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    width: 185px;
+    max-width: 100%;
+    min-height: 34px;
+    padding: 0 9px;
+    border: 1px solid var(--admin-border);
+    border-radius: 7px;
+    color: #8b9890;
+}
+
+.finorix-admin-search i {
+    flex-shrink: 0;
+    font-size: 12px;
+}
+
+.finorix-admin-search input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--admin-text);
+    font-size: 10px;
+}
+
+.finorix-admin-search input::placeholder {
+    color: #98a39c;
+}
+
+.finorix-admin-export-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 34px;
+    padding: 7px 11px;
+    border: 1px solid var(--admin-border);
+    border-radius: 7px;
+    background: #ffffff;
+    color: var(--admin-green);
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.finorix-admin-export-button:hover {
+    background: #f0f6f1;
+}
+
+.finorix-admin-table-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.finorix-admin-investment-table {
+    width: 100%;
+    min-width: 730px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.finorix-admin-investment-table thead {
+    background: #f6f8f5;
+}
+
+.finorix-admin-investment-table th {
+    padding: 12px 10px;
+    color: #839088;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.finorix-admin-investment-table td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #edf0ed;
+    color: #66766c;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.finorix-admin-investment-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.finorix-admin-investment-name {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.finorix-admin-investment-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    font-size: 15px;
+}
+
+.equity-icon {
+    background: #e8f4eb;
+    color: #287a52;
+}
+
+.mutual-icon {
+    background: #e6f2f1;
+    color: #328e80;
+}
+
+.fixed-icon {
+    background: #f7f0e4;
+    color: #b18a4c;
+}
+
+.other-icon {
+    background: #edf0f2;
+    color: #667b83;
+}
+
+.finorix-admin-investment-name strong,
+.finorix-admin-investment-name span {
+    display: block;
+}
+
+.finorix-admin-investment-name strong {
+    color: var(--admin-green);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.finorix-admin-investment-name div > span {
+    margin-top: 3px;
+    color: #96a198;
+    font-size: 9px;
+}
+
+.finorix-admin-positive {
+    color: #23835b !important;
+    font-weight: 700;
+}
+
+.finorix-admin-investment-status {
+    display: inline-flex;
+    padding: 5px 8px;
+    border-radius: 5px;
+    background: #eaf5ed;
+    color: #2b8c61;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.finorix-admin-no-results {
+    padding: 22px 10px;
+    color: #78877e;
+    text-align: center;
+    font-size: 12px;
+}
+
+.finorix-admin-table-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 0;
+    border-top: 1px solid #edf0ed;
+    color: #87938b;
+    font-size: 10px;
+}
+
+.finorix-admin-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 22px 0 5px;
+    color: #89968e;
+    font-size: 10px;
+}
+
+.finorix-admin-overlay {
+    position: fixed;
+    z-index: 1050;
+    inset: 0;
+    visibility: hidden;
+    background: rgba(8, 25, 20, 0.55);
+    opacity: 0;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.finorix-admin-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (min-width: 769px) {
+    .finorix-admin-overlay {
+        display: none;
+    }
+}
+
+@media (min-width: 1900px) {
+    .finorix-admin-content {
+        max-width: 1800px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .finorix-admin-dashboard-grid {
+        grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --admin-sidebar-width: 235px;
+    }
+
+    .finorix-admin-topbar {
+        padding-right: 22px;
+        padding-left: 22px;
+    }
+
+    .finorix-admin-content {
+        padding-right: 22px;
+        padding-left: 22px;
+    }
+
+    .finorix-admin-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .finorix-admin-dashboard-grid {
+        grid-template-columns: minmax(0, 1.35fr) minmax(250px, 1fr);
+    }
+
+    .finorix-admin-panel {
+        padding: 17px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .finorix-admin-date {
+        display: none;
+    }
+
+    .finorix-admin-topbar-right {
+        gap: 14px;
+    }
+
+    .finorix-admin-dashboard-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .finorix-admin-allocation-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 10px 20px;
+    }
+
+    .finorix-admin-allocation-panel > .finorix-admin-panel-heading {
+        grid-column: 1 / -1;
+    }
+
+    .finorix-admin-donut-container {
+        grid-row: span 2;
+    }
+
+    .finorix-admin-allocation-legend {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 769px) {
+    .finorix-admin-topbar-user div {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --admin-header-height: 56px;
+        --admin-sidebar-width: 255px;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    .finorix-admin-sidebar {
+        z-index: 1200;
+        width: min(255px, 82vw);
+        padding: 15px 14px calc(12px + env(safe-area-inset-bottom, 0px));
+        transform: translateX(-105%);
+        visibility: hidden;
+        transition: transform 0.28s ease, visibility 0.28s ease;
+        box-shadow: 15px 0 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .finorix-admin-sidebar.mobile-open {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .finorix-admin-brand {
+        height: 30px;
+        margin-bottom: 17px;
+    }
+
+    .finorix-admin-brand img {
+        width: 95px;
+        max-height: 29px;
+    }
+
+    .finorix-admin-profile {
+        margin-bottom: 20px;
+    }
+
+    .finorix-admin-support-card {
+        margin-top: 20px;
+    }
+
+    .finorix-admin-main {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .finorix-admin-topbar {
+        right: 0;
+        left: 0;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 0 14px;
+        box-shadow: 0 2px 10px rgba(16, 44, 38, 0.035);
+    }
+
+    .finorix-admin-topbar-left {
+        flex: 1;
+        gap: 0;
+    }
+
+    .finorix-admin-menu-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 36px;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border: 1px solid #e5ebe5;
+        border-radius: 8px;
+        background: var(--admin-green);
+        color: #ffffff;
+        font-size: 21px;
+    }
+
+    .finorix-admin-page-heading,
+    .finorix-admin-topbar-right {
+        display: none;
+    }
+
+    .finorix-admin-mobile-logo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 0 1 auto;
+        max-width: 125px;
+        margin-left: auto;
+    }
+
+    .finorix-admin-mobile-logo img {
+        display: block;
+        width: auto;
+        max-width: 115px;
+        height: 70px;
+        object-fit: contain;
+    }
+
+    .finorix-admin-content {
+        padding: calc(var(--admin-header-height) + 16px) 13px 16px;
+    }
+
+    .finorix-admin-welcome {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 15px;
+        padding: 19px 16px;
+        margin-bottom: 13px;
+        border-radius: 11px;
+    }
+
+    .finorix-admin-welcome h2 {
+        font-size: 22px;
+    }
+
+    .finorix-admin-welcome-description {
+        font-size: 11px;
+    }
+
+    .finorix-admin-primary-button {
+        align-self: flex-start;
+        min-height: 36px;
+    }
+
+    .finorix-admin-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 13px;
+    }
+
+    .finorix-admin-summary-card {
+        padding: 13px 12px;
+        border-radius: 10px;
+    }
+
+    .finorix-admin-summary-top {
+        align-items: flex-start;
+        gap: 5px;
+        margin-bottom: 11px;
+    }
+
+    .finorix-admin-summary-top > span {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .finorix-admin-summary-icon {
+        flex: 0 0 28px;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    .finorix-admin-summary-card h3 {
+        font-size: clamp(16px, 4.8vw, 21px);
+    }
+
+    .finorix-admin-summary-note {
+        flex-wrap: wrap;
+        font-size: 9px;
+    }
+
+    .finorix-admin-dashboard-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 13px;
+        margin-bottom: 13px;
+    }
+
+    .finorix-admin-allocation-panel {
+        display: block;
+    }
+
+    .finorix-admin-panel {
+        padding: 15px 12px;
+        border-radius: 10px;
+    }
+
+    .finorix-admin-panel-heading h3 {
+        font-size: 14px;
+    }
+
+    .finorix-admin-panel-heading select {
+        max-width: 125px;
+        font-size: 9px;
+    }
+
+    .finorix-admin-chart-summary {
+        margin-top: 16px;
+    }
+
+    .finorix-admin-chart-summary h4 {
+        font-size: 19px;
+    }
+
+    .finorix-admin-chart-container {
+        height: 195px;
+    }
+
+    .finorix-admin-donut-container {
+        height: 190px;
+    }
+
+    .finorix-admin-allocation-legend {
+        margin-top: 9px;
+    }
+
+    .finorix-admin-investments-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .finorix-admin-table-actions {
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    .finorix-admin-search {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+    }
+
+    .finorix-admin-export-button {
+        flex-shrink: 0;
+    }
+
+    .finorix-admin-table-wrapper {
+        width: calc(100% + 24px);
+        max-width: none;
+        margin-right: -12px;
+        margin-left: -12px;
+    }
+
+    .finorix-admin-investment-table th,
+    .finorix-admin-investment-table td {
+        padding-right: 9px;
+        padding-left: 9px;
+    }
+
+    .finorix-admin-table-footer {
+        font-size: 9px;
+    }
+
+    .finorix-admin-footer {
+        flex-direction: column;
+        gap: 4px;
+        padding-top: 18px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .finorix-admin-welcome h2 {
+        font-size: 20px;
+    }
+
+    .finorix-admin-chart-container {
+        height: 180px;
+    }
+
+    .finorix-admin-donut-container {
+        max-width: 210px;
+        height: 175px;
+    }
+
+    .finorix-admin-table-actions {
+        flex-wrap: wrap;
+    }
+
+    .finorix-admin-search {
+        flex: 1 1 100%;
+    }
+
+    .finorix-admin-export-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .finorix-admin-topbar {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .finorix-admin-mobile-logo img {
+        max-width: 100px;
+        height: 57px;
+    }
+
+    .finorix-admin-content {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .finorix-admin-summary-grid {
+        gap: 8px;
+    }
+
+    .finorix-admin-summary-card {
+        padding: 11px 9px;
+    }
+
+    .finorix-admin-summary-icon {
+        flex-basis: 25px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .finorix-admin-summary-card h3 {
+        font-size: 16px;
+    }
+
+    .finorix-admin-panel {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .finorix-admin-table-wrapper {
+        width: calc(100% + 20px);
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+}
+
+@media (max-width: 340px) {
+    .finorix-admin-summary-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-height: 520px) and (min-width: 769px) {
+    .finorix-admin-support-card {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

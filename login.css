@@ -1,0 +1,980 @@
+.finorix-login-body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+    background: #f7f8f4;
+    color: #102c26;
+    -webkit-font-smoothing: antialiased;
+}
+
+.finorix-login-body *,
+.finorix-login-body *::before,
+.finorix-login-body *::after {
+    box-sizing: border-box;
+}
+
+.finorix-login-body button,
+.finorix-login-body input {
+    font: inherit;
+}
+
+.finorix-login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(50, 142, 128, 0.08), transparent 30%),
+        #f7f8f4;
+}
+
+.finorix-login-shell {
+    display: grid;
+    grid-template-columns: 0.88fr 1.12fr;
+    width: 100%;
+    max-width: 1320px;
+    min-height: 740px;
+    background: #ffffff;
+    border: 1px solid #e4ece5;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(16, 44, 38, 0.07);
+}
+
+.finorix-login-promo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 52px 48px 32px;
+    background: #102c26;
+    color: #ffffff;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.finorix-login-logo,
+.finorix-login-mobile-logo {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 11px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.finorix-login-logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 12px;
+    background: #328e80;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.finorix-login-promo-content {
+    position: relative;
+    z-index: 2;
+    margin: 50px 0 45px;
+}
+
+.finorix-login-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    max-width: 100%;
+    margin-bottom: 30px;
+    padding: 10px 14px;
+    border: 1px solid rgba(145, 219, 180, 0.2);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #91dbb4;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+}
+
+.finorix-login-promo-content h1 {
+    margin: 0 0 22px;
+    color: #ffffff;
+    font-size: clamp(35px, 3.6vw, 53px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.finorix-login-promo-content h1 span {
+    color: #78d1a3;
+}
+
+.finorix-login-promo-description {
+    max-width: 470px;
+    margin: 0;
+    color: #c4d8d0;
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+.finorix-login-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    margin-top: 37px;
+}
+
+.finorix-login-benefit {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.finorix-login-benefit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 49px;
+    height: 49px;
+    border: 1px solid rgba(145, 219, 180, 0.2);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.07);
+    color: #91dbb4;
+    font-size: 19px;
+}
+
+.finorix-login-benefit h3 {
+    margin: 0 0 5px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.finorix-login-benefit p {
+    margin: 0;
+    color: #d0e1d9;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.finorix-login-promo-footer {
+    position: relative;
+    z-index: 2;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.finorix-login-location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #c2d9d0;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.finorix-login-location i {
+    color: #78d1a3;
+    font-size: 15px;
+}
+
+.finorix-login-promo-year {
+    display: block;
+    margin-top: 12px;
+    color: #8faea2;
+    font-size: 9px;
+    letter-spacing: 1.1px;
+    line-height: 1.7;
+}
+
+.finorix-login-decoration {
+    position: absolute;
+    z-index: -1;
+    border: 1px solid rgba(120, 209, 163, 0.09);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.finorix-login-decoration-one {
+    right: -180px;
+    bottom: 80px;
+    width: 400px;
+    height: 400px;
+}
+
+.finorix-login-decoration-two {
+    right: -125px;
+    bottom: 135px;
+    width: 290px;
+    height: 290px;
+}
+
+.finorix-login-form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: 45px 60px 30px;
+    background: #ffffff;
+}
+
+.finorix-login-mobile-logo {
+    display: none;
+}
+
+.finorix-login-form-wrapper {
+    width: 100%;
+    max-width: 460px;
+}
+
+.finorix-login-heading {
+    margin-bottom: 31px;
+    text-align: center;
+}
+
+.finorix-login-eyebrow {
+    display: inline-block;
+    margin-bottom: 17px;
+    color: #328e80;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.finorix-login-heading h2 {
+    margin: 0 0 13px;
+    color: #102c26;
+    font-size: clamp(26px, 2.5vw, 36px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -1.2px;
+}
+
+.finorix-login-heading p {
+    margin: 0;
+    color: #85918b;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.finorix-role-selection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.finorix-role-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    min-height: 79px;
+    padding: 13px 12px;
+    border: 1px solid #e0eae2;
+    border-radius: 13px;
+    background: #fbfdfb;
+    color: #102c26;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.finorix-role-card:hover {
+    border-color: #80bca5;
+    transform: translateY(-2px);
+}
+
+.finorix-role-card.active {
+    border-color: #15956b;
+    background: #edf7f0;
+    box-shadow: 0 0 0 1px rgba(21, 149, 107, 0.08);
+}
+
+.finorix-role-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+    background: #e7f4eb;
+    color: #168b65;
+    font-size: 16px;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.finorix-role-card.active .finorix-role-icon {
+    background: #168b65;
+    color: #ffffff;
+}
+
+.finorix-role-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 5px;
+}
+
+.finorix-role-content strong {
+    color: #18382e;
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.finorix-role-content small {
+    color: #84928a;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.finorix-role-check {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    display: none;
+    color: #168b65;
+    font-size: 12px;
+}
+
+.finorix-role-card.active .finorix-role-check {
+    display: block;
+}
+
+.finorix-role-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 24px;
+    margin-bottom: 26px;
+    color: #84918a;
+    font-size: 12px;
+}
+
+.finorix-role-status i {
+    color: #328e80;
+    font-size: 15px;
+}
+
+.finorix-login-field {
+    margin-bottom: 21px;
+}
+
+.finorix-login-field label {
+    display: block;
+    margin-bottom: 10px;
+    color: #17392e;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.finorix-login-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 54px;
+    padding: 0 15px;
+    border: 1px solid #dfebe2;
+    border-radius: 11px;
+    background: #ffffff;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.finorix-login-input-wrapper:focus-within {
+    border-color: #328e80;
+    box-shadow: 0 0 0 3px rgba(50, 142, 128, 0.1);
+}
+
+.finorix-login-input-wrapper > i {
+    flex-shrink: 0;
+    color: #9aafa5;
+    font-size: 16px;
+}
+
+.finorix-login-input-wrapper input {
+    width: 100%;
+    min-width: 0;
+    height: 52px;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #102c26;
+    font-size: 14px;
+}
+
+.finorix-login-input-wrapper input::placeholder {
+    color: #a1ada6;
+}
+
+.finorix-login-input-wrapper.invalid {
+    border-color: #dc3545;
+    background: #fffafa;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.06);
+}
+
+.finorix-login-input-wrapper.invalid > i {
+    color: #dc3545;
+}
+
+.finorix-login-error {
+    display: block;
+    min-height: 0;
+    margin-top: 0;
+    color: #dc3545;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.finorix-login-error:not(:empty) {
+    margin-top: 7px;
+}
+
+.finorix-password-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 35px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #92a69b;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.finorix-password-toggle:hover {
+    color: #328e80;
+}
+
+.finorix-login-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 5px 0 24px;
+}
+
+.finorix-remember-label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #87948c;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.finorix-remember-label input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.finorix-custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 19px;
+    height: 19px;
+    border: 1px solid #d1e0d6;
+    border-radius: 5px;
+    background: #ffffff;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.finorix-remember-label input:checked + .finorix-custom-checkbox {
+    border-color: #168b65;
+    background: #168b65;
+}
+
+.finorix-remember-label input:checked + .finorix-custom-checkbox::after {
+    content: "\f00c";
+    color: #ffffff;
+    font-family: "Font Awesome 6 Free";
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.finorix-remember-label input:focus-visible + .finorix-custom-checkbox {
+    outline: 2px solid #328e80;
+    outline-offset: 3px;
+}
+
+.finorix-forgot-link {
+    color: #168b65;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.finorix-forgot-link:hover {
+    color: #102c26;
+    text-decoration: underline;
+}
+
+.finorix-login-general-error {
+    display: none;
+    margin-bottom: 16px;
+    padding: 12px 14px;
+    border: 1px solid #f1c6ca;
+    border-radius: 8px;
+    background: #fff1f2;
+    color: #c62838;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.finorix-login-general-error.visible {
+    display: block;
+}
+
+.finorix-login-submit {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    width: 100%;
+    min-height: 54px;
+    padding: 15px 20px;
+    border: 1px solid #168b65;
+    border-radius: 11px;
+    background: #168b65;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 750;
+    box-shadow: 0 10px 24px rgba(22, 139, 101, 0.14);
+    transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.finorix-login-submit:hover {
+    background: #102c26;
+    border-color: #102c26;
+    box-shadow: 0 12px 28px rgba(16, 44, 38, 0.18);
+    transform: translateY(-2px);
+}
+
+.finorix-login-submit:disabled {
+    opacity: 0.8;
+    cursor: wait;
+    transform: none;
+}
+
+.finorix-login-submit > i {
+    font-size: 15px;
+}
+
+.finorix-login-loader {
+    display: none;
+    width: 17px;
+    height: 17px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: finorixLoginSpin 0.7s linear infinite;
+}
+
+.finorix-login-submit.loading .finorix-login-loader {
+    display: inline-block;
+}
+
+.finorix-login-submit.loading > i {
+    display: none;
+}
+
+@keyframes finorixLoginSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.finorix-login-register {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 27px;
+    color: #89958e;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.finorix-login-register a {
+    color: #168b65;
+    font-weight: 750;
+    text-decoration: none;
+}
+
+.finorix-login-register a:hover {
+    color: #102c26;
+    text-decoration: underline;
+}
+
+.finorix-login-security {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    margin-top: 29px;
+    padding-top: 23px;
+    border-top: 1px solid #e9eee9;
+    color: #8a9790;
+    font-size: 11px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.finorix-login-security i {
+    flex-shrink: 0;
+    color: #168b65;
+    font-size: 19px;
+}
+
+.finorix-login-copyright {
+    margin: 24px 0 0;
+    color: #98a39d;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+@media (min-width: 1500px) {
+    .finorix-login-shell {
+        max-width: 1400px;
+        min-height: 800px;
+    }
+
+    .finorix-login-promo {
+        padding: 60px 60px 35px;
+    }
+
+    .finorix-login-form-panel {
+        padding-right: 80px;
+        padding-left: 80px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .finorix-login-page {
+        padding: 15px;
+    }
+
+    .finorix-login-shell {
+        grid-template-columns: 0.85fr 1.15fr;
+        min-height: 700px;
+    }
+
+    .finorix-login-promo {
+        padding: 38px 30px 28px;
+    }
+
+    .finorix-login-promo-content h1 {
+        font-size: clamp(33px, 4vw, 43px);
+        letter-spacing: -1.4px;
+    }
+
+    .finorix-login-form-panel {
+        padding: 35px 30px 25px;
+    }
+
+    .finorix-role-card {
+        gap: 8px;
+        padding: 12px 9px;
+    }
+
+    .finorix-role-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 760px) {
+    .finorix-login-page {
+        display: block;
+        min-height: 100vh;
+        padding: 15px;
+    }
+
+    .finorix-login-shell {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        min-height: 0;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+
+    .finorix-login-promo {
+        display: none;
+    }
+
+    .finorix-login-form-panel {
+        display: block;
+        padding: 30px 32px 25px;
+    }
+
+    .finorix-login-mobile-logo {
+        display: inline-flex;
+        margin-bottom: 30px;
+        color: #102c26;
+        font-size: 21px;
+    }
+
+    .finorix-login-mobile-logo .finorix-login-logo-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+
+    .finorix-login-heading {
+        margin-bottom: 27px;
+    }
+
+    .finorix-login-heading h2 {
+        font-size: 29px;
+    }
+
+    .finorix-login-form-wrapper {
+        max-width: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .finorix-login-page {
+        padding: 0;
+    }
+
+    .finorix-login-shell {
+        min-height: 100vh;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .finorix-login-form-panel {
+        padding: 25px 20px;
+    }
+
+    .finorix-login-mobile-logo {
+        margin-bottom: 28px;
+    }
+
+    .finorix-login-heading h2 {
+        font-size: 27px;
+        letter-spacing: -0.8px;
+    }
+
+    .finorix-login-heading p {
+        font-size: 12px;
+    }
+
+    .finorix-role-selection {
+        gap: 8px;
+    }
+
+    .finorix-role-card {
+        min-height: 75px;
+        gap: 7px;
+        padding: 10px 7px;
+    }
+
+    .finorix-role-icon {
+        width: 31px;
+        height: 31px;
+        border-radius: 8px;
+        font-size: 13px;
+    }
+
+    .finorix-role-content strong {
+        font-size: 12px;
+    }
+
+    .finorix-role-content small {
+        font-size: 10px;
+    }
+
+    .finorix-role-check {
+        top: 5px;
+        right: 5px;
+        font-size: 10px;
+    }
+
+    .finorix-login-input-wrapper {
+        gap: 9px;
+        padding: 0 12px;
+    }
+
+    .finorix-login-input-wrapper input {
+        font-size: 13px;
+    }
+
+    .finorix-login-options {
+        align-items: flex-start;
+    }
+
+    .finorix-login-security {
+        font-size: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .finorix-login-body *,
+    .finorix-login-body *::before,
+    .finorix-login-body *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+.finorix-login-top-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.finorix-back-home {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 11px 15px;
+    border: 1px solid #dce8df;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #102c26;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.finorix-back-home:hover {
+    background: #102c26;
+    border-color: #102c26;
+    color: #ffffff;
+}
+
+.finorix-login-logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.finorix-login-logo img {
+    display: block;
+    width: 125px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 420px) {
+    .finorix-login-top-actions {
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .finorix-back-home {
+        gap: 7px;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .finorix-login-logo img {
+        width: 105px;
+    }
+}
+.finorix-login-mobile-top {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.finorix-mobile-back-home {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border: 1px solid #dce8df;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #102c26;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.finorix-mobile-back-home:hover {
+    background: #102c26;
+    border-color: #102c26;
+    color: #ffffff;
+}
+
+.finorix-login-mobile-top .finorix-login-mobile-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+.finorix-login-mobile-logo img {
+    display: block;
+    width: 115px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: blur(0.2px) brightness(0.8);
+}
+
+@media (max-width: 760px) {
+    .finorix-login-mobile-top {
+        display: flex;
+    }
+}
+
+@media (max-width: 420px) {
+    .finorix-login-mobile-top {
+        gap: 8px;
+        margin-bottom: 25px;
+    }
+
+    .finorix-mobile-back-home {
+        gap: 6px;
+        padding: 9px;
+        font-size: 12px;
+    }
+
+    .finorix-login-mobile-logo img {
+        width: 95px;
+        filter: blur(0.2px) brightness(0.8);
+    }
+}

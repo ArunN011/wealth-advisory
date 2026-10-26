@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102C26">
+
+    <title>My Investments | Finorix Wealth Advisory</title>
+
+    
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="my-investments.css">
+</head>
+
+<body>
+
+    <div class="investment-dashboard">
+
+        <aside class="investment-sidebar" id="investmentSidebar">
+
+            <a href="user-dashboard.html" class="investment-brand">
+                <img src="Assets/blacklogo.webp" alt="Finorix Wealth Advisory">
+            </a>
+
+            <div class="investment-profile">
+
+                <div class="investment-avatar">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+
+                <div class="investment-profile-info">
+                    <strong id="investmentSidebarName">User</strong>
+                    <span>Wealth Client</span>
+                </div>
+
+            </div>
+
+            <span class="investment-nav-title">MY FINANCES</span>
+
+            <nav class="investment-navigation">
+
+                <a href="user-dashboard.html" class="investment-nav-link">
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="my-investments.html"
+                    class="investment-nav-link active"
+                    aria-current="page">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <span>My Investments</span>
+                </a>
+
+                <a href="financial.html" class="investment-nav-link">
+                    <i class="bi bi-bullseye"></i>
+                    <span>Financial Goals</span>
+                </a>
+
+            </nav>
+
+            <div class="investment-sidebar-support">
+
+                <div class="investment-support-icon">
+                    <i class="bi bi-people"></i>
+                </div>
+
+                <strong>Need assistance?</strong>
+
+                <p>
+                    Our advisory team can help you understand your portfolio.
+                </p>
+
+                <a href="error.html">
+                    Contact Advisor
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+
+            </div>
+
+            <div class="investment-sidebar-bottom">
+
+                <button type="button" id="investmentLogout">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+        <div class="investment-overlay" id="investmentOverlay"></div>
+
+        <main class="investment-main">
+
+            <header class="investment-topbar">
+
+                <div class="investment-topbar-left">
+
+                    <button type="button"
+                        id="investmentMenuButton"
+                        class="investment-menu-button"
+                        aria-label="Open navigation menu"
+                        aria-controls="investmentSidebar"
+                        aria-expanded="false">
+
+                        <i class="bi bi-list"></i>
+
+                    </button>
+
+                    <a href="user-dashboard.html" class="investment-mobile-logo">
+                        <img src="Assets/blacklogo.webp" alt="Finorix">
+                    </a>
+
+                    <div class="investment-page-heading">
+
+                        <span>YOUR WEALTH SPACE</span>
+                        <h1>MY INVESTMENTS</h1>
+
+                    </div>
+
+                </div>
+
+                <div class="investment-topbar-actions">
+
+                    <a href="error.html"
+                        class="investment-topbar-icon"
+                        aria-label="Search">
+                        <i class="bi bi-search"></i>
+                    </a>
+
+                    <a href="error.html"
+                        class="investment-topbar-icon investment-notification"
+                        aria-label="Notifications">
+                        <i class="bi bi-bell"></i>
+                        <span></span>
+                    </a>
+
+                    <div class="investment-topbar-user">
+                          <a href="error.html">
+                        <div class="investment-topbar-avatar">
+                            <i class="bi bi-person-fill"></i>
+                        </a>
+                        </div>
+
+                        <div>
+                            <strong id="investmentHeaderName">User</strong>
+                            <span>Wealth Client</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <div class="investment-content">
+
+                <section class="investment-hero">
+
+                    <div class="investment-hero-content">
+
+                        <span class="investment-hero-date" id="investmentCurrentDate"></span>
+
+                        <div class="investment-hero-label">
+                            <span></span>
+                            YOUR PORTFOLIO AT A GLANCE
+                        </div>
+
+                        <h2>
+                            Your Wealth.<br>
+                            <strong>Your Future.</strong>
+                        </h2>
+
+                        <p>
+                            Explore your investment portfolio, understand your
+                            asset allocation, and stay connected to your
+                            long-term financial goals.
+                        </p>
+
+                        <div class="investment-hero-actions">
+
+                            <a href="error.html" class="investment-primary-button">
+                                VIEW HOLDINGS
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                            <a href="error.html" class="investment-secondary-button">
+                                VIEW PERFORMANCE
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="investment-hero-visual" aria-hidden="true">
+
+                        <div class="investment-orbit investment-orbit-one"></div>
+                        <div class="investment-orbit investment-orbit-two"></div>
+                        <div class="investment-orbit investment-orbit-three"></div>
+
+                        <span class="investment-orbit-dot investment-dot-one"></span>
+                        <span class="investment-orbit-dot investment-dot-two"></span>
+                        <span class="investment-orbit-dot investment-dot-three"></span>
+                        <span class="investment-orbit-dot investment-dot-four"></span>
+
+                        <div class="investment-orbit-core">
+                            <i class="bi bi-graph-up-arrow"></i>
+                            <span>PORTFOLIO</span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="investment-metrics">
+
+                    <article class="investment-metric-card">
+
+                        <div class="investment-metric-top">
+                            <div class="investment-metric-icon metric-green">
+                                <i class="bi bi-wallet2"></i>
+                            </div>
+
+                            <span class="investment-metric-tag">OVERVIEW</span>
+                        </div>
+
+                        <span class="investment-metric-label">Portfolio Value</span>
+
+                        <h3>₹12,50,000</h3>
+
+                        <p class="investment-metric-note">
+                            <i class="bi bi-info-circle"></i>
+                            Illustrative portfolio value
+                        </p>
+
+                    </article>
+
+                    <article class="investment-metric-card">
+
+                        <div class="investment-metric-top">
+                            <div class="investment-metric-icon metric-blue">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+
+                            <span class="investment-metric-tag">RETURNS</span>
+                        </div>
+
+                        <span class="investment-metric-label">Total Gain / Loss</span>
+
+                        <h3 class="metric-positive">+₹1,25,000</h3>
+
+                        <p class="investment-metric-note">
+                            <i class="bi bi-info-circle"></i>
+                            Illustrative unrealized return
+                        </p>
+
+                    </article>
+
+                    <article class="investment-metric-card">
+
+                        <div class="investment-metric-top">
+                            <div class="investment-metric-icon metric-orange">
+                                <i class="bi bi-pie-chart"></i>
+                            </div>
+
+                            <span class="investment-metric-tag">ALLOCATION</span>
+                        </div>
+
+                        <span class="investment-metric-label">Asset Categories</span>
+
+                        <h3>04</h3>
+
+                        <p class="investment-metric-note">
+                            Equity, debt, gold and cash
+                        </p>
+
+                    </article>
+
+                    <article class="investment-metric-card">
+
+                        <div class="investment-metric-top">
+                            <div class="investment-metric-icon metric-purple">
+                                <i class="bi bi-calendar-check"></i>
+                            </div>
+
+                            <span class="investment-metric-tag">PLANNING</span>
+                        </div>
+
+                        <span class="investment-metric-label">Review Schedule</span>
+
+                        <h3>Quarterly</h3>
+
+                        <p class="investment-metric-note">
+                            <i class="bi bi-info-circle"></i>
+                            Suggested review frequency
+                        </p>
+
+                    </article>
+
+                </section>
+
+                <section class="investment-analytics-grid" id="investmentPerformance">
+
+                    <article class="investment-panel investment-performance-panel">
+
+                        <div class="investment-panel-heading">
+
+                            <div>
+                                <span>PORTFOLIO INSIGHTS</span>
+                                <h3>Investment Performance</h3>
+                            </div>
+
+                            <div class="investment-chart-badge">
+                                <i class="bi bi-graph-up-arrow"></i>
+                                Performance
+                            </div>
+
+                        </div>
+
+                        <div class="investment-performance-summary">
+
+                            <div>
+                                <span>Illustrative portfolio value</span>
+                                <strong>₹12,50,000</strong>
+                            </div>
+
+                            <div class="investment-performance-status">
+                                <i class="bi bi-info-circle"></i>
+                                Sample data
+                            </div>
+
+                        </div>
+
+                        <div class="investment-chart-container">
+                            <canvas id="investmentPerformanceChart"
+                                aria-label="Illustrative portfolio performance chart"
+                                role="img"></canvas>
+                        </div>
+
+                        <div class="investment-chart-legend">
+
+                            <span>
+                                <i class="legend-dot legend-portfolio"></i>
+                                Portfolio value
+                            </span>
+
+                            <span>
+                                <i class="legend-dot legend-benchmark"></i>
+                                Reference index
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                    <article class="investment-panel investment-allocation-panel">
+
+                        <div class="investment-panel-heading">
+
+                            <div>
+                                <span>ASSET BREAKDOWN</span>
+                                <h3>Portfolio Allocation</h3>
+                            </div>
+
+                            <i class="bi bi-pie-chart-fill investment-heading-icon"></i>
+
+                        </div>
+
+                        <div class="investment-donut-wrapper">
+
+                            <div class="investment-donut-chart">
+                                <canvas id="investmentAllocationChart"
+                                    aria-label="Illustrative portfolio asset allocation chart"
+                                    role="img"></canvas>
+
+                                <div class="investment-donut-center">
+                                    <span>PORTFOLIO</span>
+                                    <strong>100%</strong>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="investment-allocation-list">
+
+                            <div class="investment-allocation-row">
+                                <span class="allocation-name">
+                                    <i class="allocation-color allocation-equity"></i>
+                                    Equity
+                                </span>
+                                <strong>45%</strong>
+                            </div>
+
+                            <div class="investment-allocation-row">
+                                <span class="allocation-name">
+                                    <i class="allocation-color allocation-debt"></i>
+                                    Debt
+                                </span>
+                                <strong>30%</strong>
+                            </div>
+
+                            <div class="investment-allocation-row">
+                                <span class="allocation-name">
+                                    <i class="allocation-color allocation-gold"></i>
+                                    Gold
+                                </span>
+                                <strong>15%</strong>
+                            </div>
+
+                            <div class="investment-allocation-row">
+                                <span class="allocation-name">
+                                    <i class="allocation-color allocation-cash"></i>
+                                    Cash
+                                </span>
+                                <strong>10%</strong>
+                            </div>
+
+                        </div>
+
+                        <p class="investment-disclaimer">
+                            Illustrative allocation only, not an investment recommendation.
+                        </p>
+
+                    </article>
+
+                </section>
+
+                <section class="investment-panel investment-holdings-panel" id="investmentHoldings">
+
+                    <div class="investment-panel-heading investment-holdings-heading">
+
+                        <div>
+                            <span>YOUR ASSETS</span>
+                            <h3>Investment Holdings</h3>
+                            <p>Explore an illustrative breakdown of your investments.</p>
+                        </div>
+
+                        <a href="error.html" class="investment-view-all">
+                            VIEW DETAILS
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="investment-table-wrapper">
+
+                        <table class="investment-table">
+
+                            <thead>
+                                <tr>
+                                    <th>INVESTMENT</th>
+                                    <th>ASSET CLASS</th>
+                                    <th>INVESTED AMOUNT</th>
+                                    <th>CURRENT VALUE</th>
+                                    <th>CHANGE</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        <div class="investment-product">
+                                            <div class="investment-product-icon product-equity">
+                                                <i class="bi bi-graph-up-arrow"></i>
+                                            </div>
+                                            <div>
+                                                <strong>Equity Portfolio</strong>
+                                                <span>Long-term growth</span>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td><span class="investment-asset-badge">Equity</span></td>
+
+                                    <td>₹4,50,000</td>
+
+                                    <td class="investment-value">₹5,62,500</td>
+
+                                    <td class="investment-gain">+25.0%</td>
+
+                                    <td><span class="investment-status">Illustrative</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="investment-product">
+                                            <div class="investment-product-icon product-debt">
+                                                <i class="bi bi-bank"></i>
+                                            </div>
+                                            <div>
+                                                <strong>Debt Portfolio</strong>
+                                                <span>Income planning</span>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td><span class="investment-asset-badge">Debt</span></td>
+
+                                    <td>₹3,00,000</td>
+
+                                    <td class="investment-value">₹3,15,000</td>
+
+                                    <td class="investment-gain">+5.0%</td>
+
+                                    <td><span class="investment-status">Illustrative</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="investment-product">
+                                            <div class="investment-product-icon product-gold">
+                                                <i class="bi bi-circle-half"></i>
+                                            </div>
+                                            <div>
+                                                <strong>Gold Allocation</strong>
+                                                <span>Diversification</span>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td><span class="investment-asset-badge">Gold</span></td>
+
+                                    <td>₹1,50,000</td>
+
+                                    <td class="investment-value">₹1,75,000</td>
+
+                                    <td class="investment-gain">+16.7%</td>
+
+                                    <td><span class="investment-status">Illustrative</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="investment-product">
+                                            <div class="investment-product-icon product-cash">
+                                                <i class="bi bi-cash-stack"></i>
+                                            </div>
+                                            <div>
+                                                <strong>Cash Reserves</strong>
+                                                <span>Liquidity planning</span>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td><span class="investment-asset-badge">Cash</span></td>
+
+                                    <td>₹2,25,000</td>
+
+                                    <td class="investment-value">₹1,97,500</td>
+
+                                    <td class="investment-loss">-12.2%</td>
+
+                                    <td><span class="investment-status">Illustrative</span></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <div class="investment-mobile-holdings" id="investmentMobileHoldings"></div>
+
+                    <p class="investment-table-note">
+                        These holdings and figures are fictional examples for UI demonstration.
+                        They are not connected to a real brokerage account or market feed.
+                    </p>
+
+                </section>
+
+                <section class="investment-bottom-grid">
+
+                    <article class="investment-panel investment-transactions-panel">
+
+                        <div class="investment-panel-heading">
+
+                            <div>
+                                <span>PORTFOLIO HISTORY</span>
+                                <h3>Recent Transactions</h3>
+                            </div>
+
+                            <i class="bi bi-arrow-left-right investment-heading-icon"></i>
+
+                        </div>
+
+                        <div class="investment-transaction-list">
+
+                            <div class="investment-transaction">
+
+                                <div class="transaction-icon transaction-buy">
+                                    <i class="bi bi-plus-lg"></i>
+                                </div>
+
+                                <div class="transaction-details">
+                                    <strong>Equity allocation</strong>
+                                    <span>Portfolio contribution</span>
+                                </div>
+
+                                <div class="transaction-amount">
+                                    <strong>₹25,000</strong>
+                                    <span>Sample entry</span>
+                                </div>
+
+                            </div>
+
+                            <div class="investment-transaction">
+
+                                <div class="transaction-icon transaction-review">
+                                    <i class="bi bi-calendar-check"></i>
+                                </div>
+
+                                <div class="transaction-details">
+                                    <strong>Portfolio review</strong>
+                                    <span>Planning activity</span>
+                                </div>
+
+                                <div class="transaction-amount">
+                                    <strong>Review</strong>
+                                    <span>Sample entry</span>
+                                </div>
+
+                            </div>
+
+                            <div class="investment-transaction">
+
+                                <div class="transaction-icon transaction-save">
+                                    <i class="bi bi-piggy-bank"></i>
+                                </div>
+
+                                <div class="transaction-details">
+                                    <strong>Goal contribution</strong>
+                                    <span>Financial planning</span>
+                                </div>
+
+                                <div class="transaction-amount">
+                                    <strong>₹10,000</strong>
+                                    <span>Sample entry</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <article class="investment-panel investment-advice-panel">
+
+                        <div class="investment-advice-icon">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+
+                        <span>SMARTER WEALTH PLANNING</span>
+
+                        <h3>Keep your investments aligned with your goals.</h3>
+
+                        <p>
+                            Review your time horizon, liquidity needs, and
+                            tolerance for risk before making financial decisions.
+                        </p>
+
+                        <a href="error.html" class="investment-advice-button">
+                            CONTACT AN ADVISOR
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+
+                    </article>
+
+                </section>
+
+                <footer class="investment-footer">
+
+                    <span>
+                        &copy; <span id="investmentCurrentYear"></span>
+                        Finorix Wealth Advisory
+                    </span>
+
+                    <span>YOUR WEALTH. YOUR TOMORROW.</span>
+
+                </footer>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="my-investments.js"></script>
+
+</body>
+
+</html>

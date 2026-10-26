@@ -1,0 +1,1827 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --client-green: #102c26;
+    --client-teal: #328e80;
+    --client-ivory: #f7f8f4;
+    --client-white: #ffffff;
+    --client-text: #263b30;
+    --client-muted: #7c8b81;
+    --client-border: #e1ebe4;
+    --client-sidebar-width: 255px;
+    --client-header-height: 68px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow-x: clip;
+    background: var(--client-ivory);
+    color: var(--client-text);
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+}
+
+body.finorix-client-scroll-locked {
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.finorix-client-app {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow-x: clip;
+}
+
+.finorix-client-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1200;
+    width: var(--client-sidebar-width);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 14px 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--client-green);
+    color: var(--client-white);
+    transition: transform 0.3s ease, visibility 0.3s ease;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.finorix-client-brand {
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.finorix-client-brand img {
+    width: 140px;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+.finorix-client-admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 17px 0 25px;
+    padding: 11px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.finorix-client-admin-avatar {
+    width: 39px;
+    height: 39px;
+    flex: 0 0 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(131, 213, 165, 0.15);
+    color: #b9ded0;
+    font-size: 18px;
+}
+
+.finorix-client-admin-details {
+    min-width: 0;
+    flex: 1;
+}
+
+.finorix-client-admin-details strong {
+    display: block;
+    overflow: hidden;
+    color: var(--client-white);
+    font-size: 12px;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.finorix-client-admin-details span {
+    display: block;
+    margin-top: 5px;
+    color: #a8c0b1;
+    font-size: 10px;
+}
+
+.finorix-client-nav-heading {
+    padding: 0 10px 10px;
+    color: #91ac9b;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.finorix-client-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.finorix-client-nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    color: #b4c8ba;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.finorix-client-nav-link i {
+    width: 18px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+.finorix-client-nav-link:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--client-white);
+}
+
+.finorix-client-nav-link.active {
+    background: var(--client-teal);
+    color: var(--client-white);
+}
+
+.finorix-client-sidebar-help {
+    margin-top: 28px;
+    padding: 15px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.finorix-client-help-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    border-radius: 9px;
+    background: rgba(131, 213, 165, 0.12);
+    color: #b9ded0;
+    font-size: 17px;
+}
+
+.finorix-client-sidebar-help h3 {
+    font-size: 12px;
+}
+
+.finorix-client-sidebar-help p {
+    margin-top: 7px;
+    color: #a8c0b1;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.finorix-client-sidebar-help > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 12px;
+    color: #b9ded0;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.finorix-client-logout {
+    min-height: 43px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding: 12px;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    color: #b4c8ba;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.finorix-client-logout:hover {
+    color: #ffb8b8;
+}
+
+.finorix-client-logout i {
+    font-size: 16px;
+}
+
+.finorix-client-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: none;
+    background: rgba(14, 36, 27, 0.62);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    touch-action: none;
+}
+
+.finorix-client-overlay.active {
+    display: block;
+}
+
+.finorix-client-main {
+    width: calc(100% - var(--client-sidebar-width));
+    min-width: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    margin-left: var(--client-sidebar-width);
+    overflow-x: clip;
+}
+
+.finorix-client-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: var(--client-sidebar-width);
+    z-index: 800;
+    height: var(--client-header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0 27px;
+    border-bottom: 1px solid var(--client-border);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.finorix-client-header-left {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.finorix-client-header-title span {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--client-teal);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+}
+
+.finorix-client-header-title h1 {
+    color: var(--client-green);
+    font-family: "Manrope", sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.finorix-client-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.finorix-client-header-icon {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--client-border);
+    border-radius: 10px;
+    color: var(--client-green);
+    font-size: 16px;
+}
+
+.finorix-client-header-icon:hover {
+    border-color: var(--client-teal);
+    color: var(--client-teal);
+}
+
+.finorix-client-bell > span {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 7px;
+    height: 7px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: #e46b54;
+}
+
+.finorix-client-header-user {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-left: 5px;
+}
+
+.finorix-client-header-avatar {
+    width: 37px;
+    height: 37px;
+    flex: 0 0 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: var(--client-ivory);
+    color: var(--client-teal);
+    font-size: 17px;
+}
+
+.finorix-client-header-user strong {
+    display: block;
+    max-width: 130px;
+    overflow: hidden;
+    color: var(--client-green);
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.finorix-client-header-user span {
+    display: block;
+    margin-top: 4px;
+    color: var(--client-muted);
+    font-size: 10px;
+}
+
+.finorix-client-menu-button,
+.finorix-client-mobile-brand {
+    display: none;
+    filter: brightness(1) saturate(100%) invert(66%) sepia(12%) saturate(700%) hue-rotate(165deg) brightness(88%) contrast(88%);
+}
+
+.finorix-client-content {
+    width: 100%;
+    max-width: 1650px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: calc(var(--client-header-height) + 22px) 27px 24px;
+}
+
+.finorix-client-welcome {
+    position: relative;
+    isolation: isolate;
+    min-height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 28px 32px;
+    overflow: hidden;
+    border: 1px solid #1d5942;
+    border-radius: 16px;
+    background: linear-gradient(115deg, #102c26, #174c3e 70%, #102c26);
+    color: white;
+}
+
+.finorix-client-welcome::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 90% 45%, rgba(131, 213, 165, 0.17), transparent 32%);
+}
+
+.finorix-client-welcome-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    min-width: 0;
+}
+
+.finorix-client-breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 23px;
+    color: #b9ded0;
+    font-size: 11px;
+}
+
+.finorix-client-breadcrumb a:hover {
+    color: white;
+}
+
+.finorix-client-eyebrow {
+    display: block;
+    margin-bottom: 10px;
+    color: #b9ded0;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+    line-height: 1.7;
+}
+
+.finorix-client-welcome h2 {
+    max-width: 600px;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(27px, 3vw, 39px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.8px;
+}
+
+.finorix-client-welcome h2 strong {
+    color: #b9ded0;
+}
+
+.finorix-client-welcome-content > p {
+    max-width: 550px;
+    margin-top: 12px;
+    color: #c4d8cb;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.finorix-client-welcome-icon {
+    width: 170px;
+    flex: 0 0 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.finorix-client-welcome-icon > div {
+    width: 112px;
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(185, 222, 208, 0.55);
+    border-radius: 50%;
+    background: rgba(185, 222, 208, 0.08);
+    color: #b9ded0;
+    box-shadow: 0 0 0 15px rgba(185, 222, 208, 0.035);
+}
+
+.finorix-client-welcome-icon i {
+    font-size: 42px;
+}
+
+.finorix-client-welcome-icon > span {
+    color: #b9ded0;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.finorix-client-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.finorix-client-stat-card {
+    min-width: 0;
+    padding: 17px;
+    border: 1px solid var(--client-border);
+    border-radius: 12px;
+    background: white;
+}
+
+.finorix-client-stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.finorix-client-stat-icon {
+    width: 39px;
+    height: 39px;
+    flex: 0 0 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.client-stat-green {
+    background: #e8f2ed;
+    color: #328e80;
+}
+
+.client-stat-blue {
+    background: #eaf2fc;
+    color: #3778c2;
+}
+
+.client-stat-orange {
+    background: #fff2e5;
+    color: #d88737;
+}
+
+.client-stat-purple {
+    background: #f1ebfc;
+    color: #8260c7;
+}
+
+.finorix-client-stat-label {
+    color: var(--client-muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+}
+
+.finorix-client-stat-card > span:nth-of-type(2) {
+    display: block;
+    color: var(--client-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.finorix-client-stat-card h3 {
+    margin-top: 4px;
+    color: var(--client-green);
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(21px, 2vw, 28px);
+    font-weight: 800;
+}
+
+.finorix-client-stat-card > p {
+    margin-top: 7px;
+    color: var(--client-muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.finorix-client-toolbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 17px;
+    margin-top: 29px;
+    margin-bottom: 16px;
+}
+
+.finorix-client-toolbar-heading > span {
+    color: var(--client-teal);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.finorix-client-toolbar-heading h2 {
+    margin-top: 5px;
+    color: var(--client-green);
+    font-family: "Manrope", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.finorix-client-toolbar-heading p {
+    margin-top: 6px;
+    color: var(--client-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.finorix-client-toolbar-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.finorix-client-export-button,
+.finorix-client-add-button {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 14px;
+    border: 1px solid var(--client-border);
+    border-radius: 9px;
+    background: white;
+    color: var(--client-green);
+    font-size: 11px;
+    font-weight: 800;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.finorix-client-export-button:hover {
+    border-color: var(--client-teal);
+    color: var(--client-teal);
+}
+
+.finorix-client-add-button {
+    border-color: var(--client-green);
+    background: var(--client-green);
+    color: white;
+}
+
+.finorix-client-add-button:hover {
+    border-color: var(--client-teal);
+    background: var(--client-teal);
+}
+
+.finorix-client-directory {
+    min-width: 0;
+    padding: 19px;
+    border: 1px solid var(--client-border);
+    border-radius: 13px;
+    background: white;
+}
+
+.finorix-client-filters {
+    display: grid;
+    grid-template-columns: minmax(220px, 1.6fr) minmax(135px, 0.8fr) minmax(170px, 1fr) auto;
+    align-items: end;
+    gap: 11px;
+}
+
+.finorix-client-search {
+    min-width: 0;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 12px;
+    border: 1px solid var(--client-border);
+    border-radius: 8px;
+    background: #fbfcfa;
+    color: var(--client-muted);
+}
+
+.finorix-client-search:focus-within {
+    border-color: var(--client-teal);
+    box-shadow: 0 0 0 3px rgba(50, 142, 128, 0.08);
+}
+
+.finorix-client-search i {
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.finorix-client-search input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--client-green);
+    font-size: 11px;
+}
+
+.finorix-client-search input::placeholder {
+    color: #96a59a;
+}
+
+.finorix-client-filter-select {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.finorix-client-filter-select > span {
+    color: var(--client-muted);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.finorix-client-filter-select select {
+    width: 100%;
+    min-width: 0;
+    height: 43px;
+    padding: 0 9px;
+    border: 1px solid var(--client-border);
+    border-radius: 8px;
+    outline: 0;
+    background: #fbfcfa;
+    color: var(--client-text);
+    font-size: 11px;
+}
+
+.finorix-client-filter-select select:focus {
+    border-color: var(--client-teal);
+}
+
+.finorix-client-reset-button {
+    min-height: 43px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 11px;
+    border: 1px solid var(--client-border);
+    border-radius: 8px;
+    background: white;
+    color: var(--client-muted);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.finorix-client-reset-button:hover {
+    border-color: var(--client-teal);
+    color: var(--client-teal);
+}
+
+.finorix-client-result-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--client-border);
+}
+
+.finorix-client-result-bar > span {
+    color: var(--client-muted);
+    font-size: 11px;
+}
+
+.finorix-client-demo-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--client-teal) !important;
+}
+
+.finorix-client-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #c9d9cf transparent;
+}
+
+.finorix-client-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.finorix-client-table thead th {
+    padding: 15px 10px;
+    border-bottom: 1px solid var(--client-border);
+    color: var(--client-muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+}
+
+.finorix-client-table tbody td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #edf2ee;
+    color: var(--client-text);
+    font-size: 11px;
+    vertical-align: middle;
+}
+
+.finorix-client-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.finorix-client-table tbody tr:hover {
+    background: #fbfcfa;
+}
+
+.finorix-client-person {
+    min-width: 160px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.finorix-client-person-avatar {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.finorix-client-person-avatar.avatar-green {
+    background: #e8f2ed;
+    color: #328e80;
+}
+
+.finorix-client-person-avatar.avatar-blue {
+    background: #eaf2fc;
+    color: #3778c2;
+}
+
+.finorix-client-person-avatar.avatar-orange {
+    background: #fff2e5;
+    color: #d88737;
+}
+
+.finorix-client-person-avatar.avatar-purple {
+    background: #f1ebfc;
+    color: #8260c7;
+}
+
+.finorix-client-person-avatar.avatar-rose {
+    background: #fbecee;
+    color: #b85b71;
+}
+
+.finorix-client-person-info {
+    min-width: 0;
+}
+
+.finorix-client-person-info strong {
+    display: block;
+    color: var(--client-green);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.finorix-client-person-info span {
+    display: block;
+    max-width: 190px;
+    margin-top: 4px;
+    overflow-wrap: anywhere;
+    color: var(--client-muted);
+    font-size: 10px;
+}
+
+.finorix-client-id {
+    color: var(--client-muted);
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.finorix-client-plan {
+    display: inline-block;
+    max-width: 150px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: #f0f5f1;
+    color: var(--client-green);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.finorix-client-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.finorix-client-status::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.finorix-client-status.status-active {
+    background: #e8f2ed;
+    color: #328e80;
+}
+
+.finorix-client-status.status-pending {
+    background: #fff3df;
+    color: #b87a20;
+}
+
+.finorix-client-status.status-inactive {
+    background: #f0f1ef;
+    color: #7c8b81;
+}
+
+.finorix-client-row-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.finorix-client-row-action {
+    width: 31px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--client-border);
+    border-radius: 7px;
+    background: white;
+    color: var(--client-muted);
+    font-size: 13px;
+}
+
+.finorix-client-row-action:hover {
+    border-color: var(--client-teal);
+    color: var(--client-teal);
+}
+
+.finorix-client-row-action.delete:hover {
+    border-color: #e7a3a3;
+    color: #c54b4b;
+}
+
+.finorix-client-empty {
+    padding: 45px 15px;
+    text-align: center;
+}
+
+.finorix-client-empty[hidden] {
+    display: none;
+}
+
+.finorix-client-empty > i {
+    color: #9bb5a5;
+    font-size: 32px;
+}
+
+.finorix-client-empty h3 {
+    margin-top: 12px;
+    color: var(--client-green);
+    font-size: 15px;
+}
+
+.finorix-client-empty p {
+    margin-top: 7px;
+    color: var(--client-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.finorix-client-table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 15px;
+    border-top: 1px solid var(--client-border);
+}
+
+.finorix-client-table-footer > span {
+    color: var(--client-muted);
+    font-size: 11px;
+}
+
+.finorix-client-pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.finorix-client-pagination button {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--client-border);
+    border-radius: 7px;
+    background: white;
+    color: var(--client-green);
+}
+
+.finorix-client-pagination button:hover:not(:disabled) {
+    border-color: var(--client-teal);
+    color: var(--client-teal);
+}
+
+.finorix-client-pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.finorix-client-pagination > span {
+    min-width: 28px;
+    text-align: center;
+    color: var(--client-green);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.finorix-client-bottom-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    gap: 14px;
+    margin-top: 23px;
+}
+
+.finorix-client-insight-card,
+.finorix-client-review-card {
+    min-width: 0;
+    padding: 21px;
+    border: 1px solid var(--client-border);
+    border-radius: 13px;
+    background: white;
+}
+
+.finorix-client-insight-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: linear-gradient(120deg, #e8f2ed, #fbfcfa);
+}
+
+.finorix-client-insight-icon {
+    width: 45px;
+    height: 45px;
+    flex: 0 0 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: var(--client-teal);
+    color: white;
+    font-size: 21px;
+}
+
+.finorix-client-insight-card > div:last-child {
+    min-width: 0;
+}
+
+.finorix-client-insight-card > div:last-child > span,
+.finorix-client-review-heading > div > span {
+    color: var(--client-teal);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.finorix-client-insight-card h3 {
+    margin-top: 7px;
+    color: var(--client-green);
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.finorix-client-insight-card p {
+    margin-top: 8px;
+    color: var(--client-muted);
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+.finorix-client-review-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--client-border);
+}
+
+.finorix-client-review-heading h3 {
+    margin-top: 6px;
+    color: var(--client-green);
+    font-family: "Manrope", sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.finorix-client-review-heading > i {
+    color: var(--client-teal);
+    font-size: 22px;
+}
+
+.finorix-client-review-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 0;
+    border-bottom: 1px solid #edf2ee;
+}
+
+.finorix-client-review-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.finorix-client-review-dot {
+    width: 8px;
+    height: 8px;
+    flex: 0 0 8px;
+    margin-top: 4px;
+    border-radius: 50%;
+    background: var(--client-teal);
+}
+
+.review-dot-blue {
+    background: #6d9ed8;
+}
+
+.review-dot-orange {
+    background: #d6a657;
+}
+
+.finorix-client-review-item > div {
+    min-width: 0;
+}
+
+.finorix-client-review-item strong {
+    display: block;
+    color: var(--client-green);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.finorix-client-review-item span:not(.finorix-client-review-dot) {
+    display: block;
+    margin-top: 4px;
+    color: var(--client-muted);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.finorix-client-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px 3px 0;
+}
+
+.finorix-client-footer span {
+    color: var(--client-muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.finorix-client-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.finorix-client-modal.active {
+    display: flex;
+}
+
+.finorix-client-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 32, 24, 0.67);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.finorix-client-modal-panel {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 540px;
+    max-height: calc(100vh - 40px);
+    max-height: calc(100svh - 40px);
+    padding: 24px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid var(--client-border);
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+}
+
+.finorix-client-modal-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--client-border);
+}
+
+.finorix-client-modal-heading > div > span {
+    color: var(--client-teal);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.finorix-client-modal-heading h2 {
+    margin-top: 7px;
+    color: var(--client-green);
+    font-family: "Manrope", sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.finorix-client-modal-heading > button {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--client-border);
+    border-radius: 9px;
+    background: white;
+    color: var(--client-muted);
+}
+
+.finorix-client-modal-heading > button:hover {
+    color: var(--client-green);
+}
+
+#finorixClientForm {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.finorix-client-form-field {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.finorix-client-form-field > span {
+    color: var(--client-text);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.finorix-client-form-field input,
+.finorix-client-form-field select {
+    width: 100%;
+    min-width: 0;
+    height: 43px;
+    padding: 0 11px;
+    border: 1px solid var(--client-border);
+    border-radius: 8px;
+    outline: none;
+    background: #fbfcfa;
+    color: var(--client-green);
+    font-size: 12px;
+}
+
+.finorix-client-form-field input:focus,
+.finorix-client-form-field select:focus {
+    border-color: var(--client-teal);
+    box-shadow: 0 0 0 3px rgba(50, 142, 128, 0.08);
+}
+
+.finorix-client-form-field input:invalid:not(:placeholder-shown) {
+    border-color: #d97070;
+}
+
+.finorix-client-form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 9px;
+    padding-top: 8px;
+}
+
+.finorix-client-cancel-button,
+.finorix-client-save-button {
+    min-height: 42px;
+    padding: 0 17px;
+    border: 1px solid var(--client-border);
+    border-radius: 8px;
+    background: white;
+    color: var(--client-green);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.finorix-client-save-button {
+    border-color: var(--client-green);
+    background: var(--client-green);
+    color: white;
+}
+
+.finorix-client-save-button:hover {
+    border-color: var(--client-teal);
+    background: var(--client-teal);
+}
+
+.finorix-client-form-message {
+    grid-column: 1 / -1;
+    color: #b44949;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.finorix-client-toast {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1800;
+    max-width: calc(100vw - 30px);
+    padding: 13px 17px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    background: var(--client-green);
+    color: white;
+    font-size: 12px;
+    line-height: 1.7;
+    box-shadow: 0 12px 35px rgba(16, 44, 38, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.finorix-client-toast.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (min-width: 1500px) {
+    .finorix-client-content {
+        padding-right: 35px;
+        padding-left: 35px;
+    }
+}
+
+@media (max-width: 1250px) {
+    :root {
+        --client-sidebar-width: 230px;
+    }
+
+    .finorix-client-header {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .finorix-client-content {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .finorix-client-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .finorix-client-filters {
+        grid-template-columns: minmax(200px, 1fr) minmax(130px, 0.7fr);
+    }
+
+    .finorix-client-reset-button {
+        min-height: 40px;
+    }
+
+    .finorix-client-bottom-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    :root {
+        --client-sidebar-width: 270px;
+        --client-header-height: 60px;
+    }
+
+    .finorix-client-sidebar {
+        width: min(var(--client-sidebar-width), 86vw);
+        max-width: 320px;
+        transform: translateX(-105%);
+        visibility: hidden;
+        box-shadow: 12px 0 35px rgba(10, 35, 24, 0.15);
+    }
+
+    .finorix-client-sidebar.mobile-open {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .finorix-client-main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .finorix-client-header {
+        left: 0;
+        width: 100%;
+        padding: 0 17px;
+    }
+
+    .finorix-client-header-left {
+        flex: 1;
+        gap: 12px;
+    }
+
+    .finorix-client-menu-button {
+        width: 38px;
+        height: 38px;
+        flex: 0 0 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--client-border);
+        border-radius: 9px;
+        background: white;
+        color: var(--client-green);
+        font-size: 20px;
+    }
+
+    .finorix-client-menu-button:hover {
+        border-color: var(--client-teal);
+        color: var(--client-teal);
+    }
+
+    .finorix-client-mobile-brand {
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .finorix-client-mobile-brand img {
+        width: 115px;
+        max-height: 37px;
+        object-fit: contain;
+    }
+
+    .finorix-client-header-title,
+    .finorix-client-header-actions {
+        display: none;
+    }
+
+    .finorix-client-content {
+        padding: calc(var(--client-header-height) + 16px) 17px 22px;
+    }
+
+    .finorix-client-welcome {
+        padding: 24px;
+    }
+
+    .finorix-client-welcome-icon {
+        width: 120px;
+        flex-basis: 120px;
+    }
+
+    .finorix-client-welcome-icon > div {
+        width: 90px;
+        height: 90px;
+    }
+
+    .finorix-client-welcome-icon i {
+        font-size: 34px;
+    }
+
+    .finorix-client-toolbar {
+        align-items: flex-start;
+    }
+
+    .finorix-client-directory {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .finorix-client-header {
+        padding: 0 13px;
+    }
+
+    .finorix-client-content {
+        padding: calc(var(--client-header-height) + 12px) 13px 20px;
+    }
+
+    .finorix-client-welcome {
+        align-items: flex-start;
+        padding: 21px 18px;
+    }
+
+    .finorix-client-breadcrumb {
+        margin-bottom: 18px;
+    }
+
+    .finorix-client-welcome h2 {
+        font-size: clamp(25px, 6vw, 34px);
+    }
+
+    .finorix-client-welcome-icon {
+        width: 70px;
+        flex-basis: 70px;
+        margin-top: 30px;
+    }
+
+    .finorix-client-welcome-icon > div {
+        width: 64px;
+        height: 64px;
+        box-shadow: none;
+    }
+
+    .finorix-client-welcome-icon i {
+        font-size: 25px;
+    }
+
+    .finorix-client-welcome-icon > span {
+        font-size: 9px;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+
+    .finorix-client-toolbar {
+        align-items: stretch;
+    }
+
+    .finorix-client-toolbar-actions {
+        width: 100%;
+    }
+
+    .finorix-client-export-button,
+    .finorix-client-add-button {
+        flex: 1;
+    }
+
+    .finorix-client-filters {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .finorix-client-search {
+        grid-column: 1 / -1;
+    }
+
+    .finorix-client-reset-button {
+        align-self: end;
+    }
+
+    .finorix-client-insight-card,
+    .finorix-client-review-card {
+        padding: 17px;
+    }
+
+    .finorix-client-footer {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .finorix-client-header {
+        height: 56px;
+        padding: 0 10px;
+    }
+
+    .finorix-client-menu-button {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+        font-size: 19px;
+    }
+
+    .finorix-client-mobile-brand img {
+        width: 100px;
+        max-height: 66px;
+    }
+
+    .finorix-client-content {
+        padding: 66px 9px 17px;
+    }
+
+    .finorix-client-welcome {
+        padding: 18px 13px;
+        border-radius: 12px;
+    }
+
+    .finorix-client-welcome-content {
+        flex: 1;
+    }
+
+    .finorix-client-welcome h2 {
+        font-size: clamp(23px, 7vw, 30px);
+    }
+
+    .finorix-client-welcome-content > p {
+        font-size: 12px;
+    }
+
+    .finorix-client-welcome-icon {
+        width: 46px;
+        flex-basis: 46px;
+        margin-top: 40px;
+    }
+
+    .finorix-client-welcome-icon > div {
+        width: 43px;
+        height: 43px;
+    }
+
+    .finorix-client-welcome-icon i {
+        font-size: 19px;
+    }
+
+    .finorix-client-welcome-icon > span {
+        display: none;
+    }
+
+    .finorix-client-stats {
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    .finorix-client-stat-card {
+        padding: 11px;
+    }
+
+    .finorix-client-stat-icon {
+        width: 33px;
+        height: 33px;
+        flex-basis: 33px;
+        font-size: 16px;
+    }
+
+    .finorix-client-stat-card h3 {
+        font-size: 21px;
+    }
+
+    .finorix-client-toolbar {
+        margin-top: 23px;
+    }
+
+    .finorix-client-toolbar-heading h2 {
+        font-size: 22px;
+    }
+
+    .finorix-client-toolbar-actions {
+        flex-direction: column;
+    }
+
+    .finorix-client-export-button,
+    .finorix-client-add-button {
+        width: 100%;
+        flex: auto;
+    }
+
+    .finorix-client-directory {
+        padding: 11px;
+        border-radius: 11px;
+    }
+
+    .finorix-client-filters {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .finorix-client-search {
+        grid-column: auto;
+    }
+
+    .finorix-client-filter-select select,
+    .finorix-client-search {
+        height: 42px;
+    }
+
+    .finorix-client-reset-button {
+        width: 100%;
+    }
+
+    .finorix-client-result-bar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+        margin-top: 16px;
+    }
+
+    .finorix-client-table-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .finorix-client-insight-card {
+        gap: 11px;
+        padding: 13px;
+    }
+
+    .finorix-client-insight-icon {
+        width: 37px;
+        height: 37px;
+        flex-basis: 37px;
+        font-size: 18px;
+    }
+
+    .finorix-client-insight-card h3 {
+        font-size: 16px;
+    }
+
+    .finorix-client-insight-card p {
+        font-size: 11px;
+    }
+
+    .finorix-client-modal {
+        padding: 10px;
+    }
+
+    .finorix-client-modal-panel {
+        max-height: calc(100svh - 20px);
+        padding: 17px;
+        border-radius: 12px;
+    }
+
+    .finorix-client-modal-heading h2 {
+        font-size: 19px;
+    }
+
+    #finorixClientForm {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 13px;
+        margin-top: 15px;
+    }
+
+    .finorix-client-form-actions {
+        grid-column: auto;
+    }
+
+    .finorix-client-cancel-button,
+    .finorix-client-save-button {
+        flex: 1;
+    }
+
+    .finorix-client-toast {
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

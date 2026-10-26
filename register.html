@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102C26">
+    <meta name="description" content="Create your Finorix Wealth Advisory account.">
+    <title>Register | Finorix Wealth Advisory</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="preloader.css">
+</head>
+<div class="stackly-preloader" id="stacklyPreloader" role="status" aria-label="Loading page">
+    <div class="stackly-loader-content">
+        <div class="stackly-loader-logo">
+            <span class="stackly-loader-ring"></span>
+            <img src="Assets/blacklogo.webp" alt="Stackly Logo" class="stackly-loader-image">
+        </div>
+
+        <div class="stackly-loader-brand">STACKLY</div>
+
+        <div class="stackly-loader-progress">
+            <span></span>
+        </div>
+
+        <p class="stackly-loader-text">Preparing your experience</p>
+    </div>
+</div>
+
+<body class="finorix-register-body">
+
+    <main class="finorix-register-page">
+        <div class="finorix-register-shell">
+
+            <section class="finorix-register-promo">
+
+                <div class="finorix-register-top-actions">
+                    <a href="index.html" class="finorix-register-back-home">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Back to Home</span>
+                    </a>
+
+                    <a href="index.html" class="finorix-register-logo">
+                        <img src="Assets/blacklogo.webp" alt="Finorix Wealth Advisory">
+                    </a>
+                </div>
+
+                <div class="finorix-register-promo-content">
+                    <span class="finorix-register-badge">
+                        <i class="fa-solid fa-seedling"></i>
+                        START YOUR FINANCIAL JOURNEY
+                    </span>
+
+                    <h1>
+                        Your Goals.<br>
+                        Your Wealth.<br>
+                        Your <span>Future.</span>
+                    </h1>
+
+                    <p class="finorix-register-promo-description">
+                        Join Finorix and take the first step toward a more
+                        organized financial future with thoughtful wealth planning.
+                    </p>
+
+                    <div class="finorix-register-benefits">
+                        <div class="finorix-register-benefit">
+                            <div class="finorix-register-benefit-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h3>Track Your Progress</h3>
+                                <p>Keep your financial priorities in focus.</p>
+                            </div>
+                        </div>
+
+                        <div class="finorix-register-benefit">
+                            <div class="finorix-register-benefit-icon">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <div>
+                                <h3>Plan With Purpose</h3>
+                                <p>Organize your financial goals.</p>
+                            </div>
+                        </div>
+
+                        <div class="finorix-register-benefit">
+                            <div class="finorix-register-benefit-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h3>Privacy Matters</h3>
+                                <p>Build good habits around account security.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="finorix-register-promo-footer">
+                    <div class="finorix-register-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Stackly · Salem, Tamil Nadu, India</span>
+                    </div>
+
+                    <span class="finorix-register-tagline">
+                        FINANCIAL CLARITY. LASTING CONFIDENCE.
+                    </span>
+                </div>
+
+                <div class="finorix-register-decoration finorix-register-decoration-one"></div>
+                <div class="finorix-register-decoration finorix-register-decoration-two"></div>
+            </section>
+
+            <section class="finorix-register-form-panel">
+
+                <div class="finorix-register-mobile-top">
+                    <a href="index.html" class="finorix-register-mobile-back">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Back to Home</span>
+                    </a>
+
+                    <a href="index.html" class="finorix-register-mobile-logo">
+                        <img src="Assets/blacklogo.webp" alt="Finorix Wealth Advisory">
+                    </a>
+                </div>
+
+                <div class="finorix-register-form-wrapper">
+
+                    <div class="finorix-register-heading">
+                        <span class="finorix-register-eyebrow">JOIN FINORIX</span>
+                        <h2>Create your account</h2>
+                        <p>Enter your details to get started with Finorix.</p>
+                    </div>
+
+                    <form id="finorixRegisterForm" novalidate>
+
+                        <div class="finorix-register-field">
+                            <label for="finorixFullName">Full Name</label>
+                            <div class="finorix-register-input-wrapper">
+                                <i class="fa-regular fa-user"></i>
+                                <input
+                                    type="text"
+                                    id="finorixFullName"
+                                    name="fullName"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                    minlength="2"
+                                    maxlength="80"
+                                    required>
+                            </div>
+                            <small class="finorix-register-error" id="finorixFullNameError"></small>
+                        </div>
+
+                        <div class="finorix-register-field">
+                            <label for="finorixRegisterEmail">Email Address</label>
+                            <div class="finorix-register-input-wrapper">
+                                <i class="fa-regular fa-envelope"></i>
+                                <input
+                                    type="email"
+                                    id="finorixRegisterEmail"
+                                    name="email"
+                                    placeholder="Enter your email address"
+                                    autocomplete="email"
+                                    maxlength="254"
+                                    required>
+                            </div>
+                            <small class="finorix-register-error" id="finorixRegisterEmailError"></small>
+                        </div>
+
+                        <div class="finorix-register-field">
+                            <label for="finorixPhone">Phone Number</label>
+                            <div class="finorix-register-input-wrapper">
+                                <i class="fa-solid fa-phone"></i>
+                                <input
+                                    type="tel"
+                                    id="finorixPhone"
+                                    name="phone"
+                                    placeholder="Enter your 10-digit phone number"
+                                    autocomplete="tel"
+                                    inputmode="numeric"
+                                    maxlength="10"
+                                    required>
+                            </div>
+                            <small class="finorix-register-error" id="finorixPhoneError"></small>
+                        </div>
+
+                        <div class="finorix-register-field">
+                            <label for="finorixRegisterRole">Account Type</label>
+                            <div class="finorix-register-input-wrapper finorix-register-role-wrapper">
+                                <i class="fa-solid fa-user-tag"></i>
+                                <select id="finorixRegisterRole" name="role" required>
+                                    <option value="" selected disabled>Select account type</option>
+                                    <option value="client">Client</option>
+                                    <option value="user">User</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down finorix-register-select-arrow"></i>
+                            </div>
+                            <small class="finorix-register-error" id="finorixRegisterRoleError"></small>
+                        </div>
+
+                        <div class="finorix-register-field">
+                            <label for="finorixRegisterPassword">Password</label>
+                            <div class="finorix-register-input-wrapper">
+                                <i class="fa-solid fa-lock"></i>
+                                <input
+                                    type="password"
+                                    id="finorixRegisterPassword"
+                                    name="password"
+                                    placeholder="Create a strong password"
+                                    autocomplete="new-password"
+                                    minlength="8"
+                                    maxlength="64"
+                                    required>
+
+                                <button
+                                    type="button"
+                                    class="finorix-register-password-toggle"
+                                    data-target="finorixRegisterPassword"
+                                    aria-label="Show password">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+
+                            <div class="finorix-password-strength">
+                                <div class="finorix-password-strength-track">
+                                    <span id="finorixPasswordStrengthBar"></span>
+                                </div>
+                                <span id="finorixPasswordStrengthText">Use at least 8 characters</span>
+                            </div>
+
+                            <small class="finorix-register-error" id="finorixRegisterPasswordError"></small>
+                        </div>
+
+                        <div class="finorix-register-field">
+                            <label for="finorixConfirmPassword">Confirm Password</label>
+                            <div class="finorix-register-input-wrapper">
+                                <i class="fa-solid fa-lock"></i>
+                                <input
+                                    type="password"
+                                    id="finorixConfirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="Re-enter your password"
+                                    autocomplete="new-password"
+                                    minlength="8"
+                                    maxlength="64"
+                                    required>
+
+                                <button
+                                    type="button"
+                                    class="finorix-register-password-toggle"
+                                    data-target="finorixConfirmPassword"
+                                    aria-label="Show confirm password">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                            <small class="finorix-register-error" id="finorixConfirmPasswordError"></small>
+                        </div>
+
+                        <div class="finorix-register-terms">
+                            <input type="checkbox" id="finorixRegisterTerms" name="terms" required>
+                            <label for="finorixRegisterTerms">
+                                I agree to the
+                                <a href="error.html">Terms and Conditions</a>
+                                and
+                                <a href="error.html">Privacy Policy</a>.
+                            </label>
+                        </div>
+
+                        <small class="finorix-register-error finorix-terms-error" id="finorixRegisterTermsError"></small>
+
+                        <div class="finorix-register-message" id="finorixRegisterMessage" role="alert" aria-live="polite"></div>
+
+                        <button type="submit" class="finorix-register-submit">
+                            <span>Create Account</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                        <div class="finorix-register-login">
+                            <span>Already have an account?</span>
+                            <a href="login.html">Sign In</a>
+                        </div>
+
+                    </form>
+
+                    <div class="finorix-register-security">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Your financial journey starts with thoughtful planning.</span>
+                    </div>
+
+                    <p class="finorix-register-copyright">
+                         &copy; <span id="finorixRegisterYear"></span> Stackly. All rights reserved.
+                    </p>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.2/gsap.min.js"></script>
+    <script src="register.js"></script>
+    <script src="preloader.js"></script>
+
+</body>
+</html>

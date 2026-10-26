@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102c26">
+    <meta name="description" content="Finorix Wealth Advisory portfolio dashboard">
+    <title>Portfolio Overview | Finorix Wealth Advisory</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+    <div class="finorix-admin-layout">
+
+        <div class="finorix-admin-overlay" id="finorixAdminOverlay"></div>
+
+        <aside class="finorix-admin-sidebar" id="finorixAdminSidebar">
+
+            <a href="admin-dashboard.html" class="finorix-admin-brand">
+                <img src="Assets/blacklogo.webp" alt="Finorix Wealth Advisory">
+            </a>
+
+            <div class="finorix-admin-profile">
+                <div class="finorix-admin-avatar">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+
+                <div class="finorix-admin-profile-details">
+                    <h3 id="finorixAdminUsername">mohanrk2003</h3>
+                    <p>Wealth Administrator</p>
+                </div>
+
+                <span class="finorix-admin-online-indicator"></span>
+            </div>
+
+            <div class="finorix-admin-nav-section">
+                <p class="finorix-admin-section-label">Administration</p>
+
+                <nav class="finorix-admin-navigation">
+                    <a href="admin-dashboard.html" class="finorix-admin-nav-link">
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a href="client.html" class="finorix-admin-nav-link">
+                        <i class="bi bi-people"></i>
+                        <span>Client Management</span>
+                    </a>
+
+                    <a href="portfolio.html" class="finorix-admin-nav-link active">
+                        <i class="bi bi-pie-chart"></i>
+                        <span>Portfolio Overview</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="finorix-admin-support-card">
+                <div class="finorix-admin-support-icon">
+                    <i class="bi bi-headset"></i>
+                </div>
+
+                <h3>Need assistance?</h3>
+
+                <p>Access support for administrative and account-related queries.</p>
+
+                <a href="error.html">
+                    Contact Support
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+            </div>
+
+            <div class="finorix-admin-sidebar-bottom">
+                <button type="button" class="finorix-admin-logout" id="finorixAdminLogout">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+
+        </aside>
+
+        <main class="finorix-admin-main">
+
+            <header class="finorix-admin-topbar">
+
+                <div class="finorix-admin-topbar-left">
+                    <button
+                        type="button"
+                        class="finorix-admin-menu-button"
+                        id="finorixAdminMenuButton"
+                        aria-label="Open navigation menu"
+                        aria-controls="finorixAdminSidebar"
+                        aria-expanded="false">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                    <div class="finorix-admin-page-heading">
+                        <span> WEALTH ADVISORY</span>
+                        <h1>Portfolio Overview</h1>
+                    </div>
+                </div>
+
+                <div class="finorix-admin-topbar-right">
+                    <div class="finorix-admin-date">
+                        <i class="bi bi-calendar3"></i>
+                        <span id="finorixAdminDate"></span>
+                    </div>
+
+                    <button type="button" class="finorix-admin-notification" aria-label="Notifications">
+                        <a href="error.html">
+                        <i class="bi bi-bell"></i>
+                        </a>
+                        <span></span>
+                    </button>
+
+                    <div class="finorix-admin-topbar-user">
+                        <a href="error.html">
+                        <div class="finorix-admin-topbar-avatar">
+                            <i class="bi bi-person-fill"></i>
+                        </a>
+                        </div>
+                        <div>
+                            <strong id="finorixAdminTopUsername">Administrator</strong>
+                            <span>Administrator</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="admin-dashboard.html" class="finorix-admin-mobile-logo">
+                    <img src="Assets/blacklogo.webp" alt="Finorix">
+                </a>
+
+            </header>
+
+            <section class="finorix-admin-content">
+
+                <div class="finorix-admin-welcome">
+                    <div>
+                        <p class="finorix-admin-eyebrow">
+                            <span class="finorix-admin-status-dot"></span>
+                            WEALTH MANAGEMENT
+                        </p>
+
+                        <h2>Your portfolio, <span>in perspective.</span></h2>
+
+                        <p class="finorix-admin-welcome-description">
+                            Review your investments, understand your allocation, and track your financial progress.
+                        </p>
+                    </div>
+
+                    <a href="error.html" class="finorix-admin-primary-button">
+                        <i class="bi bi-headset"></i>
+                        Speak to an Advisor
+                    </a>
+                </div>
+
+                <div class="finorix-admin-summary-grid">
+
+                    <article class="finorix-admin-summary-card">
+                        <div class="finorix-admin-summary-top">
+                            <span>Total Portfolio Value</span>
+                            <div class="finorix-admin-summary-icon">
+                                <i class="bi bi-wallet2"></i>
+                            </div>
+                        </div>
+                        <h3>₹24,85,000</h3>
+                        <p class="finorix-admin-summary-note">
+                            <i class="bi bi-arrow-up-right"></i>
+                            Portfolio valuation
+                        </p>
+                    </article>
+
+                    <article class="finorix-admin-summary-card">
+                        <div class="finorix-admin-summary-top">
+                            <span>Total Investments</span>
+                            <div class="finorix-admin-summary-icon">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                        </div>
+                        <h3>₹20,00,000</h3>
+                        <p class="finorix-admin-summary-note">
+                            <i class="bi bi-check-circle"></i>
+                            Invested capital
+                        </p>
+                    </article>
+
+                    <article class="finorix-admin-summary-card">
+                        <div class="finorix-admin-summary-top">
+                            <span>Portfolio Growth</span>
+                            <div class="finorix-admin-summary-icon">
+                                <i class="bi bi-bar-chart-line"></i>
+                            </div>
+                        </div>
+                        <h3>24.25%</h3>
+                        <p class="finorix-admin-summary-note">
+                            <i class="bi bi-arrow-up-right"></i>
+                            Overall return
+                        </p>
+                    </article>
+
+                    <article class="finorix-admin-summary-card">
+                        <div class="finorix-admin-summary-top">
+                            <span>Active Investments</span>
+                            <div class="finorix-admin-summary-icon">
+                                <i class="bi bi-pie-chart"></i>
+                            </div>
+                        </div>
+                        <h3>08</h3>
+                        <p class="finorix-admin-summary-note">
+                            Across asset classes
+                        </p>
+                    </article>
+
+                </div>
+
+                <div class="finorix-admin-dashboard-grid">
+
+                    <section class="finorix-admin-panel finorix-admin-performance-panel">
+                        <div class="finorix-admin-panel-heading">
+                            <div>
+                                <span class="finorix-admin-panel-label">PORTFOLIO PERFORMANCE</span>
+                                <h3>Investment Growth</h3>
+                            </div>
+
+                            <select id="finorixAdminPerformancePeriod" aria-label="Select performance period">
+                                <option value="6">Last 6 months</option>
+                                <option value="12" selected>Last 12 months</option>
+                            </select>
+                        </div>
+
+                        <div class="finorix-admin-chart-summary">
+                            <div>
+                                <span>Current valuation</span>
+                                <h4>₹24.85L</h4>
+                            </div>
+
+                            <span class="finorix-admin-growth-badge">
+                                <i class="bi bi-arrow-up-right"></i>
+                                24.25%
+                            </span>
+                        </div>
+
+                        <div class="finorix-admin-chart-container">
+                            <canvas id="finorixAdminPerformanceChart"></canvas>
+                        </div>
+                    </section>
+
+                    <section class="finorix-admin-panel finorix-admin-allocation-panel">
+                        <div class="finorix-admin-panel-heading">
+                            <div>
+                                <span class="finorix-admin-panel-label">ASSET DISTRIBUTION</span>
+                                <h3>Portfolio Allocation</h3>
+                            </div>
+                        </div>
+
+                        <div class="finorix-admin-donut-container">
+                            <canvas id="finorixAdminAllocationChart"></canvas>
+                            <div class="finorix-admin-donut-center">
+                                <span>Total Assets</span>
+                                <strong>₹24.85L</strong>
+                            </div>
+                        </div>
+
+                        <div class="finorix-admin-allocation-legend">
+                            <div>
+                                <span class="finorix-admin-legend-dot legend-green"></span>
+                                <span>Equity</span>
+                                <strong>45%</strong>
+                            </div>
+                            <div>
+                                <span class="finorix-admin-legend-dot legend-teal"></span>
+                                <span>Mutual Funds</span>
+                                <strong>30%</strong>
+                            </div>
+                            <div>
+                                <span class="finorix-admin-legend-dot legend-gold"></span>
+                                <span>Fixed Income</span>
+                                <strong>15%</strong>
+                            </div>
+                            <div>
+                                <span class="finorix-admin-legend-dot legend-gray"></span>
+                                <span>Other Assets</span>
+                                <strong>10%</strong>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <section class="finorix-admin-panel finorix-admin-investments-panel">
+
+                    <div class="finorix-admin-panel-heading finorix-admin-investments-heading">
+                        <div>
+                            <span class="finorix-admin-panel-label">INVESTMENT PORTFOLIO</span>
+                            <h3>Investment Breakdown</h3>
+                        </div>
+
+                        <div class="finorix-admin-table-actions">
+                            <div class="finorix-admin-search">
+                                <i class="bi bi-search"></i>
+                                <input type="search" id="finorixAdminInvestmentSearch" placeholder="Search investments" aria-label="Search investments">
+                            </div>
+
+                            <button type="button" class="finorix-admin-export-button" id="finorixAdminExport">
+                                <i class="bi bi-download"></i>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="finorix-admin-table-wrapper">
+                        <table class="finorix-admin-investment-table">
+                            <thead>
+                                <tr>
+                                    <th>Investment</th>
+                                    <th>Asset Class</th>
+                                    <th>Invested Amount</th>
+                                    <th>Current Value</th>
+                                    <th>Returns</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="finorixAdminInvestmentBody">
+                                <tr>
+                                    <td>
+                                        <div class="finorix-admin-investment-name">
+                                            <span class="finorix-admin-investment-icon equity-icon">
+                                                <i class="bi bi-graph-up-arrow"></i>
+                                            </span>
+                                            <div>
+                                                <strong>Equity Growth Fund</strong>
+                                                <span>INV-1001</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Equity</td>
+                                    <td>₹5,00,000</td>
+                                    <td>₹6,20,000</td>
+                                    <td class="finorix-admin-positive">+24.00%</td>
+                                    <td><span class="finorix-admin-investment-status">Active</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="finorix-admin-investment-name">
+                                            <span class="finorix-admin-investment-icon mutual-icon">
+                                                <i class="bi bi-bar-chart"></i>
+                                            </span>
+                                            <div>
+                                                <strong>Balanced Mutual Fund</strong>
+                                                <span>INV-1002</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Mutual Funds</td>
+                                    <td>₹4,00,000</td>
+                                    <td>₹4,68,000</td>
+                                    <td class="finorix-admin-positive">+17.00%</td>
+                                    <td><span class="finorix-admin-investment-status">Active</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="finorix-admin-investment-name">
+                                            <span class="finorix-admin-investment-icon fixed-icon">
+                                                <i class="bi bi-shield-check"></i>
+                                            </span>
+                                            <div>
+                                                <strong>Fixed Income Plan</strong>
+                                                <span>INV-1003</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Fixed Income</td>
+                                    <td>₹3,00,000</td>
+                                    <td>₹3,24,000</td>
+                                    <td class="finorix-admin-positive">+8.00%</td>
+                                    <td><span class="finorix-admin-investment-status">Active</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="finorix-admin-investment-name">
+                                            <span class="finorix-admin-investment-icon other-icon">
+                                                <i class="bi bi-building"></i>
+                                            </span>
+                                            <div>
+                                                <strong>Alternative Assets</strong>
+                                                <span>INV-1004</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Alternative</td>
+                                    <td>₹2,00,000</td>
+                                    <td>₹2,18,000</td>
+                                    <td class="finorix-admin-positive">+9.00%</td>
+                                    <td><span class="finorix-admin-investment-status">Active</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p class="finorix-admin-no-results" id="finorixAdminNoResults" hidden>
+                            No investments match your search.
+                        </p>
+                    </div>
+
+                    <div class="finorix-admin-table-footer">
+                        <span id="finorixAdminInvestmentCount">Showing 4 investments</span>
+                        <span>Sample portfolio data</span>
+                    </div>
+
+                </section>
+
+                <footer class="finorix-admin-footer">
+                    <span>© <span id="finorixAdminYear"></span> Finorix Wealth Advisory</span>
+                    <span>Plan thoughtfully. Grow confidently.</span>
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="portfolio.js"></script>
+
+</body>
+</html>

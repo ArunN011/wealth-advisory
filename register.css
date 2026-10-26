@@ -1,0 +1,944 @@
+:root {
+    --register-green: #102c26;
+    --register-teal: #328e80;
+    --register-ivory: #f7f8f4;
+    --register-white: #ffffff;
+    --register-muted: #85918b;
+    --register-border: #dfebe2;
+    --register-error: #dc3545;
+    --register-success: #168b65;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body.finorix-register-body {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--register-ivory);
+    color: var(--register-green);
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.finorix-register-body *,
+.finorix-register-body *::before,
+.finorix-register-body *::after {
+    box-sizing: border-box;
+}
+
+.finorix-register-body img {
+    max-width: 100%;
+    filter: brightness(1) saturate(100%) invert(66%) sepia(12%) saturate(700%) hue-rotate(165deg) brightness(88%) contrast(88%);
+}
+
+.finorix-register-body button,
+.finorix-register-body input,
+.finorix-register-body select {
+    font: inherit;
+}
+
+.finorix-register-body a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.finorix-register-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 20px;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(50, 142, 128, 0.08), transparent 30%),
+        var(--register-ivory);
+}
+
+.finorix-register-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    width: 100%;
+    max-width: 1320px;
+    min-height: 0;
+    overflow: hidden;
+    border: 1px solid #e4ece5;
+    border-radius: 25px;
+    background: var(--register-white);
+    box-shadow: 0 25px 80px rgba(16, 44, 38, 0.07);
+}
+
+.finorix-register-promo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    min-width: 0;
+    padding: 38px 42px 30px;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--register-green);
+    color: var(--register-white);
+}
+
+.finorix-register-top-actions {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    min-width: 0;
+}
+
+.finorix-register-back-home,
+.finorix-register-mobile-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+    min-height: 38px;
+    padding: 9px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.finorix-register-back-home:hover {
+    background: #ffffff;
+    color: var(--register-green);
+}
+
+.finorix-register-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 0;
+    max-width: 145px;
+
+}
+
+.finorix-register-logo img {
+    display: block;
+    width: 125px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(1) saturate(100%) invert(66%) sepia(12%) saturate(700%) hue-rotate(165deg) brightness(88%) contrast(88%);
+}
+
+.finorix-register-promo-content {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+    margin: 20px 0;
+}
+
+.finorix-register-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+    margin-bottom: 25px;
+    padding: 9px 12px;
+    border: 1px solid rgba(145, 219, 180, 0.2);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #91dbb4;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.finorix-register-promo-content h1 {
+    margin: 0 0 19px;
+    color: #ffffff;
+    font-size: clamp(32px, 3.5vw, 49px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    overflow-wrap: break-word;
+}
+
+.finorix-register-promo-content h1 span {
+    color: #78d1a3;
+}
+
+.finorix-register-promo-description {
+    max-width: 420px;
+    margin: 0;
+    color: #c4d8d0;
+    font-size: 13px;
+    line-height: 1.9;
+    overflow-wrap: break-word;
+}
+
+.finorix-register-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    margin-top: 30px;
+}
+
+.finorix-register-benefit {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 0;
+}
+
+.finorix-register-benefit > div:not(.finorix-register-benefit-icon) {
+    min-width: 0;
+}
+
+.finorix-register-benefit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 43px;
+    width: 43px;
+    height: 43px;
+    border: 1px solid rgba(145, 219, 180, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    color: #91dbb4;
+    font-size: 17px;
+}
+
+.finorix-register-benefit h3 {
+    margin: 0 0 4px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.finorix-register-benefit p {
+    margin: 0;
+    color: #c4d8d0;
+    font-size: 11px;
+    line-height: 1.7;
+    overflow-wrap: break-word;
+}
+
+.finorix-register-promo-footer {
+    position: relative;
+    z-index: 2;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.finorix-register-location {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #c2d9d0;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.finorix-register-location i {
+    flex-shrink: 0;
+    color: #78d1a3;
+    font-size: 14px;
+}
+
+.finorix-register-tagline {
+    display: block;
+    margin-top: 10px;
+    color: #8faea2;
+    font-size: 9px;
+    letter-spacing: 0.9px;
+    line-height: 1.7;
+    overflow-wrap: break-word;
+}
+
+.finorix-register-decoration {
+    position: absolute;
+    z-index: -1;
+    border: 1px solid rgba(120, 209, 163, 0.09);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.finorix-register-decoration-one {
+    right: -190px;
+    bottom: 70px;
+    width: 400px;
+    height: 400px;
+}
+
+.finorix-register-decoration-two {
+    right: -125px;
+    bottom: 135px;
+    width: 290px;
+    height: 290px;
+}
+
+.finorix-register-form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: 35px 55px 25px;
+    background: #ffffff;
+}
+
+.finorix-register-mobile-top {
+    display: none;
+}
+
+.finorix-register-form-wrapper {
+    width: 100%;
+    max-width: 440px;
+    min-width: 0;
+    margin: auto;
+}
+
+.finorix-register-heading {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.finorix-register-eyebrow {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--register-teal);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.finorix-register-heading h2 {
+    margin: 0 0 9px;
+    color: var(--register-green);
+    font-size: clamp(25px, 2.5vw, 33px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.9px;
+    overflow-wrap: break-word;
+}
+
+.finorix-register-heading p {
+    margin: 0;
+    color: var(--register-muted);
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-wrap: break-word;
+}
+
+.finorix-register-field {
+    min-width: 0;
+    margin-bottom: 15px;
+}
+
+.finorix-register-field > label {
+    display: block;
+    margin-bottom: 7px;
+    color: #17392e;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.finorix-register-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+    min-height: 47px;
+    padding: 0 12px;
+    border: 1px solid var(--register-border);
+    border-radius: 9px;
+    background: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.finorix-register-input-wrapper:focus-within {
+    border-color: var(--register-teal);
+    box-shadow: 0 0 0 3px rgba(50, 142, 128, 0.1);
+}
+
+.finorix-register-input-wrapper > i {
+    flex-shrink: 0;
+    color: #9aafa5;
+    font-size: 14px;
+}
+
+.finorix-register-input-wrapper input,
+.finorix-register-input-wrapper select {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    height: 45px;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--register-green);
+    font-size: 12px;
+    text-overflow: ellipsis;
+}
+
+.finorix-register-input-wrapper input::placeholder {
+    color: #a1ada6;
+}
+
+.finorix-register-input-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.finorix-register-input-wrapper select:invalid {
+    color: #a1ada6;
+}
+
+.finorix-register-role-wrapper {
+    position: relative;
+}
+
+.finorix-register-select-arrow {
+    pointer-events: none;
+    font-size: 11px !important;
+}
+
+.finorix-register-input-wrapper.invalid {
+    border-color: var(--register-error);
+    background: #fffafa;
+}
+
+.finorix-register-input-wrapper.valid {
+    border-color: var(--register-success);
+}
+
+.finorix-register-password-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 34px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #92a69b;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.finorix-register-password-toggle:hover {
+    color: var(--register-teal);
+}
+
+.finorix-register-error {
+    display: block;
+    min-height: 0;
+    margin-top: 0;
+    color: var(--register-error);
+    font-size: 11px;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+.finorix-register-error:not(:empty) {
+    margin-top: 5px;
+}
+
+.finorix-password-strength {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 8px;
+}
+
+.finorix-password-strength-track {
+    flex: 1;
+    min-width: 0;
+    height: 4px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #e9eee9;
+}
+
+.finorix-password-strength-track span {
+    display: block;
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: #dc3545;
+    transition: width 0.2s ease, background 0.2s ease;
+}
+
+.finorix-password-strength > span {
+    flex: 0 0 auto;
+    color: #87948c;
+    font-size: 10px;
+}
+
+.finorix-register-terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-top: 5px;
+}
+
+.finorix-register-terms input {
+    flex: 0 0 15px;
+    width: 15px;
+    height: 15px;
+    margin: 2px 0 0;
+    accent-color: var(--register-teal);
+    cursor: pointer;
+}
+
+.finorix-register-terms label {
+    min-width: 0;
+    color: #7f8d84;
+    font-size: 11px;
+    line-height: 1.8;
+    cursor: pointer;
+    overflow-wrap: break-word;
+}
+
+.finorix-register-terms a {
+    color: var(--register-success);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.finorix-register-terms a:hover {
+    color: var(--register-green);
+    text-decoration: underline;
+}
+
+.finorix-terms-error {
+    margin-bottom: 10px;
+}
+
+.finorix-register-message {
+    display: none;
+    margin: 12px 0;
+    padding: 10px 12px;
+    border: 1px solid #f1c6ca;
+    border-radius: 8px;
+    background: #fff1f2;
+    color: #c62838;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+
+.finorix-register-message.visible {
+    display: block;
+}
+
+.finorix-register-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    width: 100%;
+    min-height: 48px;
+    margin-top: 17px;
+    padding: 12px 18px;
+    border: 1px solid var(--register-success);
+    border-radius: 9px;
+    background: var(--register-success);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(22, 139, 101, 0.12);
+    transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.finorix-register-submit:hover {
+    transform: translateY(-2px);
+    border-color: var(--register-green);
+    background: var(--register-green);
+    box-shadow: 0 10px 24px rgba(16, 44, 38, 0.15);
+}
+
+.finorix-register-submit:active {
+    transform: translateY(0);
+}
+
+.finorix-register-login {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 20px;
+    color: #89958e;
+    font-size: 11px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.finorix-register-login a {
+    color: var(--register-success);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.finorix-register-login a:hover {
+    color: var(--register-green);
+    text-decoration: underline;
+}
+
+.finorix-register-security {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #e9eee9;
+    color: #8a9790;
+    font-size: 10px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.finorix-register-security i {
+    flex-shrink: 0;
+    color: var(--register-success);
+    font-size: 16px;
+}
+
+.finorix-register-copyright {
+    margin: 15px 0 0;
+    color: #98a39d;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+@media (min-width: 1500px) {
+    .finorix-register-shell {
+        max-width: 1400px;
+    }
+
+    .finorix-register-promo {
+        padding: 45px 55px 35px;
+    }
+
+    .finorix-register-form-panel {
+        padding-right: 75px;
+        padding-left: 75px;
+    }
+
+    .finorix-register-form-wrapper {
+        max-width: 460px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .finorix-register-page {
+        padding: 15px;
+    }
+
+    .finorix-register-shell {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    }
+
+    .finorix-register-promo {
+        padding: 30px 25px 25px;
+    }
+
+    .finorix-register-promo-content h1 {
+        font-size: clamp(28px, 3.8vw, 40px);
+        letter-spacing: -1px;
+    }
+
+    .finorix-register-form-panel {
+        padding: 30px 28px 24px;
+    }
+
+    .finorix-register-benefits {
+        gap: 15px;
+    }
+}
+
+@media (min-width: 861px) and (max-height: 760px) {
+    .finorix-register-promo {
+        gap: 14px;
+        padding-top: 24px;
+        padding-bottom: 20px;
+    }
+
+    .finorix-register-promo-content {
+        margin: 10px 0;
+    }
+
+    .finorix-register-badge {
+        margin-bottom: 16px;
+    }
+
+    .finorix-register-promo-content h1 {
+        margin-bottom: 12px;
+    }
+
+    .finorix-register-benefits {
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    .finorix-register-form-panel {
+        padding-top: 24px;
+        padding-bottom: 18px;
+    }
+
+    .finorix-register-heading {
+        margin-bottom: 16px;
+    }
+
+    .finorix-register-field {
+        margin-bottom: 11px;
+    }
+}
+
+@media (max-width: 860px) {
+    .finorix-register-page {
+        display: block;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 15px;
+    }
+
+    .finorix-register-shell {
+        display: block;
+        max-width: 560px;
+        min-height: 0;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+
+    .finorix-register-promo {
+        display: none;
+    }
+
+    .finorix-register-form-panel {
+        display: block;
+        padding: 25px 30px;
+    }
+
+    .finorix-register-mobile-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 25px;
+    }
+
+    .finorix-register-mobile-back {
+        min-height: 36px;
+        padding: 8px 10px;
+        border-color: #dce8df;
+        background: #ffffff;
+        color: var(--register-green);
+    }
+
+    .finorix-register-mobile-back:hover {
+        background: var(--register-green);
+        color: #ffffff;
+    }
+
+    .finorix-register-mobile-logo {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        min-width: 0;
+        max-width: 125px;
+    }
+
+    .finorix-register-mobile-logo img {
+        display: block;
+        width: 115px;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .finorix-register-heading {
+        margin-bottom: 22px;
+    }
+
+    .finorix-register-heading h2 {
+        font-size: 29px;
+    }
+
+    .finorix-register-form-wrapper {
+        max-width: none;
+    }
+
+    .finorix-register-input-wrapper input,
+    .finorix-register-input-wrapper select {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 420px) {
+    .finorix-register-page {
+        padding: 0;
+    }
+
+    .finorix-register-shell {
+        max-width: none;
+        min-height: 100vh;
+        min-height: 100dvh;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .finorix-register-form-panel {
+        padding: 22px 19px;
+    }
+
+    .finorix-register-mobile-top {
+        gap: 8px;
+        margin-bottom: 22px;
+    }
+
+    .finorix-register-mobile-back {
+        gap: 6px;
+        padding: 8px;
+        font-size: 11px;
+    }
+
+    .finorix-register-mobile-logo {
+        max-width: 105px;
+    }
+
+    .finorix-register-mobile-logo img {
+        width: 100px;
+    }
+
+    .finorix-register-heading h2 {
+        font-size: 26px;
+        letter-spacing: -0.6px;
+    }
+
+    .finorix-register-heading p {
+        font-size: 12px;
+    }
+
+    .finorix-register-field {
+        margin-bottom: 14px;
+    }
+
+    .finorix-register-input-wrapper {
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    .finorix-register-security {
+        align-items: flex-start;
+        text-align: left;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .finorix-register-form-panel {
+        padding: 18px 14px;
+    }
+
+    .finorix-register-mobile-top {
+        gap: 6px;
+    }
+
+    .finorix-register-mobile-back {
+        padding: 7px 8px;
+        font-size: 10px;
+    }
+
+    .finorix-register-mobile-logo {
+        max-width: 90px;
+    }
+
+    .finorix-register-mobile-logo img {
+        width: 88px;
+    }
+
+    .finorix-register-heading h2 {
+        font-size: 23px;
+    }
+
+    .finorix-register-input-wrapper {
+        gap: 6px;
+        padding: 0 8px;
+    }
+
+    .finorix-register-password-toggle {
+        flex-basis: 26px;
+        width: 26px;
+    }
+
+    .finorix-register-terms label {
+        font-size: 10.5px;
+    }
+}
+
+@media (max-width: 300px) {
+    .finorix-register-form-panel {
+        padding: 16px 10px;
+    }
+
+    .finorix-register-mobile-top {
+        flex-wrap: wrap;
+    }
+
+    .finorix-register-heading h2 {
+        font-size: 21px;
+    }
+
+    .finorix-register-eyebrow {
+        letter-spacing: 1px;
+    }
+
+    .finorix-register-login {
+        font-size: 10.5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .finorix-register-body *,
+    .finorix-register-body *::before,
+    .finorix-register-body *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
